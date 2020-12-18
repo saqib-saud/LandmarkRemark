@@ -3,18 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75F44D68CF005418430DADB5 /* Pods_Landmark_Remark_Landmark_RemarkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF9998C222811B998AF21C9 /* Pods_Landmark_Remark_Landmark_RemarkUITests.framework */; };
+		916F5F077B31F12140A22EBC /* Pods_Landmark_RemarkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2187C88867532D7C7A5A89DF /* Pods_Landmark_RemarkTests.framework */; };
 		C1B588962589CC7A007AB53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588952589CC7A007AB53C /* AppDelegate.swift */; };
 		C1B588982589CC7A007AB53C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588972589CC7A007AB53C /* SceneDelegate.swift */; };
-		C1B5889A2589CC7A007AB53C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588992589CC7A007AB53C /* ViewController.swift */; };
 		C1B5889D2589CC7A007AB53C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B5889B2589CC7A007AB53C /* Main.storyboard */; };
 		C1B5889F2589CC7A007AB53C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1B5889E2589CC7A007AB53C /* Assets.xcassets */; };
 		C1B588A22589CC7A007AB53C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B588A02589CC7A007AB53C /* LaunchScreen.storyboard */; };
 		C1B588AD2589CC7B007AB53C /* Landmark_RemarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588AC2589CC7B007AB53C /* Landmark_RemarkTests.swift */; };
 		C1B588B82589CC7B007AB53C /* Landmark_RemarkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588B72589CC7B007AB53C /* Landmark_RemarkUITests.swift */; };
+		C1B588C92589CCA3007AB53C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1B588C82589CCA3007AB53C /* GoogleService-Info.plist */; };
+		C1B588EE258A11BB007AB53C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588ED258A11BB007AB53C /* LoginViewController.swift */; };
+		C1B588F8258A11FA007AB53C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588F7258A11FA007AB53C /* AuthenticationService.swift */; };
+		C1EF191B258A145000149E4F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF191A258A145000149E4F /* LoginViewModel.swift */; };
+		C1EF1920258A1E0100149E4F /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF191F258A1E0100149E4F /* FirebaseClient.swift */; };
+		C1EF192C258A288A00149E4F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF192B258A288A00149E4F /* HomeViewController.swift */; };
+		C1EF1934258A289400149E4F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1933258A289400149E4F /* HomeViewModel.swift */; };
+		C1EF1939258A2ACC00149E4F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1938258A2ACC00149E4F /* AppCoordinator.swift */; };
+		C1EF1950258ADBB200149E4F /* RemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF194F258ADBB200149E4F /* RemarkView.swift */; };
+		C1EF1955258B1F2E00149E4F /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1954258B1F2E00149E4F /* FirestoreClient.swift */; };
+		C1EF19A0258B341600149E4F /* DatastoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF199F258B341600149E4F /* DatastoreService.swift */; };
+		C1EF19A9258C8AE000149E4F /* AddRemarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19A8258C8AE000149E4F /* AddRemarkViewController.swift */; };
+		C1EF19B1258C8AED00149E4F /* AddRemarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19B0258C8AED00149E4F /* AddRemarkViewModel.swift */; };
+		DC5CBB437CBCCCC2C6E4BBDF /* Pods_Landmark_Remark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF68AA0B9463D006E4378B2 /* Pods_Landmark_Remark.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +50,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14794F3A7A172A5F8E1D1885 /* Pods-Landmark Remark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark.release.xcconfig"; path = "Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark.release.xcconfig"; sourceTree = "<group>"; };
+		2187C88867532D7C7A5A89DF /* Pods_Landmark_RemarkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Landmark_RemarkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF68AA0B9463D006E4378B2 /* Pods_Landmark_Remark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Landmark_Remark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DC136F3F62615AA5A60BCB /* Pods-Landmark RemarkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark RemarkTests.debug.xcconfig"; path = "Target Support Files/Pods-Landmark RemarkTests/Pods-Landmark RemarkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81F0D4EAF853AB74FDA0CCB8 /* Pods-Landmark Remark-Landmark RemarkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark-Landmark RemarkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Landmark Remark-Landmark RemarkUITests/Pods-Landmark Remark-Landmark RemarkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A52ADD7165F411CFAF2CE495 /* Pods-Landmark RemarkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark RemarkTests.release.xcconfig"; path = "Target Support Files/Pods-Landmark RemarkTests/Pods-Landmark RemarkTests.release.xcconfig"; sourceTree = "<group>"; };
+		BBF9998C222811B998AF21C9 /* Pods_Landmark_Remark_Landmark_RemarkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Landmark_Remark_Landmark_RemarkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B588922589CC7A007AB53C /* Landmark Remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark Remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B588952589CC7A007AB53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B588972589CC7A007AB53C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C1B588992589CC7A007AB53C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C1B5889C2589CC7A007AB53C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1B5889E2589CC7A007AB53C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1B588A12589CC7A007AB53C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +70,22 @@
 		C1B588B32589CC7B007AB53C /* Landmark RemarkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Landmark RemarkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B588B72589CC7B007AB53C /* Landmark_RemarkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark_RemarkUITests.swift; sourceTree = "<group>"; };
 		C1B588B92589CC7B007AB53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1B588C82589CCA3007AB53C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C1B588E5258A0220007AB53C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C1B588ED258A11BB007AB53C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C1B588F7258A11FA007AB53C /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		C1EF191A258A145000149E4F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C1EF191F258A1E0100149E4F /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseClient.swift; path = Source/Data/FirebaseClient.swift; sourceTree = SOURCE_ROOT; };
+		C1EF192B258A288A00149E4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C1EF1933258A289400149E4F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C1EF1938258A2ACC00149E4F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C1EF194F258ADBB200149E4F /* RemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkView.swift; sourceTree = "<group>"; };
+		C1EF1954258B1F2E00149E4F /* FirestoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
+		C1EF199F258B341600149E4F /* DatastoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatastoreService.swift; sourceTree = "<group>"; };
+		C1EF19A8258C8AE000149E4F /* AddRemarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemarkViewController.swift; sourceTree = "<group>"; };
+		C1EF19B0258C8AED00149E4F /* AddRemarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemarkViewModel.swift; sourceTree = "<group>"; };
+		C5B26A8BD245A91A08F31CF0 /* Pods-Landmark Remark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark.debug.xcconfig"; path = "Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark.debug.xcconfig"; sourceTree = "<group>"; };
+		F714BC3B4E40D0FFFF1CA175 /* Pods-Landmark Remark-Landmark RemarkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark-Landmark RemarkUITests.release.xcconfig"; path = "Target Support Files/Pods-Landmark Remark-Landmark RemarkUITests/Pods-Landmark Remark-Landmark RemarkUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5CBB437CBCCCC2C6E4BBDF /* Pods_Landmark_Remark.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916F5F077B31F12140A22EBC /* Pods_Landmark_RemarkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +109,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75F44D68CF005418430DADB5 /* Pods_Landmark_Remark_Landmark_RemarkUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32E03CEC160CC67698297459 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5B26A8BD245A91A08F31CF0 /* Pods-Landmark Remark.debug.xcconfig */,
+				14794F3A7A172A5F8E1D1885 /* Pods-Landmark Remark.release.xcconfig */,
+				81F0D4EAF853AB74FDA0CCB8 /* Pods-Landmark Remark-Landmark RemarkUITests.debug.xcconfig */,
+				F714BC3B4E40D0FFFF1CA175 /* Pods-Landmark Remark-Landmark RemarkUITests.release.xcconfig */,
+				80DC136F3F62615AA5A60BCB /* Pods-Landmark RemarkTests.debug.xcconfig */,
+				A52ADD7165F411CFAF2CE495 /* Pods-Landmark RemarkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4EB150C835C2EAA1EE3E49CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DF68AA0B9463D006E4378B2 /* Pods_Landmark_Remark.framework */,
+				BBF9998C222811B998AF21C9 /* Pods_Landmark_Remark_Landmark_RemarkUITests.framework */,
+				2187C88867532D7C7A5A89DF /* Pods_Landmark_RemarkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C1B588892589CC7A007AB53C = {
 			isa = PBXGroup;
 			children = (
-				C1B588942589CC7A007AB53C /* Landmark Remark */,
+				C1B588E5258A0220007AB53C /* README.md */,
+				C1B588942589CC7A007AB53C /* Source */,
 				C1B588AB2589CC7B007AB53C /* Landmark RemarkTests */,
 				C1B588B62589CC7B007AB53C /* Landmark RemarkUITests */,
 				C1B588932589CC7A007AB53C /* Products */,
+				32E03CEC160CC67698297459 /* Pods */,
+				4EB150C835C2EAA1EE3E49CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,18 +162,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C1B588942589CC7A007AB53C /* Landmark Remark */ = {
+		C1B588942589CC7A007AB53C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C1B588EB258A1135007AB53C /* Presentation */,
+				C1B588E9258A1119007AB53C /* Domain */,
+				C1B588EA258A1127007AB53C /* Data */,
 				C1B588952589CC7A007AB53C /* AppDelegate.swift */,
 				C1B588972589CC7A007AB53C /* SceneDelegate.swift */,
-				C1B588992589CC7A007AB53C /* ViewController.swift */,
-				C1B5889B2589CC7A007AB53C /* Main.storyboard */,
 				C1B5889E2589CC7A007AB53C /* Assets.xcassets */,
 				C1B588A02589CC7A007AB53C /* LaunchScreen.storyboard */,
 				C1B588A32589CC7A007AB53C /* Info.plist */,
+				C1B588C82589CCA3007AB53C /* GoogleService-Info.plist */,
 			);
-			path = "Landmark Remark";
+			path = Source;
 			sourceTree = "<group>";
 		};
 		C1B588AB2589CC7B007AB53C /* Landmark RemarkTests */ = {
@@ -128,6 +196,72 @@
 			path = "Landmark RemarkUITests";
 			sourceTree = "<group>";
 		};
+		C1B588E9258A1119007AB53C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C1B588F7258A11FA007AB53C /* AuthenticationService.swift */,
+				C1EF199F258B341600149E4F /* DatastoreService.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C1B588EA258A1127007AB53C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C1EF191F258A1E0100149E4F /* FirebaseClient.swift */,
+				C1EF1954258B1F2E00149E4F /* FirestoreClient.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C1B588EB258A1135007AB53C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C1B5889B2589CC7A007AB53C /* Main.storyboard */,
+				C1B588EC258A1188007AB53C /* Login */,
+				C1EF192A258A286600149E4F /* Home */,
+				C1EF19A7258C8AB700149E4F /* AddRemark */,
+				C1EF1938258A2ACC00149E4F /* AppCoordinator.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C1B588EC258A1188007AB53C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C1B588ED258A11BB007AB53C /* LoginViewController.swift */,
+				C1EF191A258A145000149E4F /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C1EF192A258A286600149E4F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C1EF194E258ADB8500149E4F /* Views */,
+				C1EF192B258A288A00149E4F /* HomeViewController.swift */,
+				C1EF1933258A289400149E4F /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C1EF194E258ADB8500149E4F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1EF194F258ADBB200149E4F /* RemarkView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C1EF19A7258C8AB700149E4F /* AddRemark */ = {
+			isa = PBXGroup;
+			children = (
+				C1EF19A8258C8AE000149E4F /* AddRemarkViewController.swift */,
+				C1EF19B0258C8AED00149E4F /* AddRemarkViewModel.swift */,
+			);
+			path = AddRemark;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1B588BC2589CC7B007AB53C /* Build configuration list for PBXNativeTarget "Landmark Remark" */;
 			buildPhases = (
+				4A58B75FB8697AC87F733DC3 /* [CP] Check Pods Manifest.lock */,
 				C1B5888E2589CC7A007AB53C /* Sources */,
 				C1B5888F2589CC7A007AB53C /* Frameworks */,
 				C1B588902589CC7A007AB53C /* Resources */,
+				B60DB8E55E414DDE94907E13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +288,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1B588BF2589CC7B007AB53C /* Build configuration list for PBXNativeTarget "Landmark RemarkTests" */;
 			buildPhases = (
+				16246487C8E26A19A0B8BB66 /* [CP] Check Pods Manifest.lock */,
 				C1B588A42589CC7A007AB53C /* Sources */,
 				C1B588A52589CC7A007AB53C /* Frameworks */,
 				C1B588A62589CC7A007AB53C /* Resources */,
@@ -170,9 +307,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1B588C22589CC7B007AB53C /* Build configuration list for PBXNativeTarget "Landmark RemarkUITests" */;
 			buildPhases = (
+				4E45561B39592DD66EB861BF /* [CP] Check Pods Manifest.lock */,
 				C1B588AF2589CC7B007AB53C /* Sources */,
 				C1B588B02589CC7B007AB53C /* Frameworks */,
 				C1B588B12589CC7B007AB53C /* Resources */,
+				AF2A38DA096603D8051AB88A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1B588A22589CC7A007AB53C /* LaunchScreen.storyboard in Resources */,
+				C1B588C92589CCA3007AB53C /* GoogleService-Info.plist in Resources */,
 				C1B5889F2589CC7A007AB53C /* Assets.xcassets in Resources */,
 				C1B5889D2589CC7A007AB53C /* Main.storyboard in Resources */,
 			);
@@ -253,14 +393,128 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16246487C8E26A19A0B8BB66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Landmark RemarkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A58B75FB8697AC87F733DC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Landmark Remark-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E45561B39592DD66EB861BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Landmark Remark-Landmark RemarkUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF2A38DA096603D8051AB88A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Landmark Remark-Landmark RemarkUITests/Pods-Landmark Remark-Landmark RemarkUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Landmark Remark-Landmark RemarkUITests/Pods-Landmark Remark-Landmark RemarkUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Landmark Remark-Landmark RemarkUITests/Pods-Landmark Remark-Landmark RemarkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B60DB8E55E414DDE94907E13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C1B5888E2589CC7A007AB53C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1B5889A2589CC7A007AB53C /* ViewController.swift in Sources */,
+				C1B588EE258A11BB007AB53C /* LoginViewController.swift in Sources */,
 				C1B588962589CC7A007AB53C /* AppDelegate.swift in Sources */,
+				C1EF1950258ADBB200149E4F /* RemarkView.swift in Sources */,
 				C1B588982589CC7A007AB53C /* SceneDelegate.swift in Sources */,
+				C1EF19B1258C8AED00149E4F /* AddRemarkViewModel.swift in Sources */,
+				C1EF1934258A289400149E4F /* HomeViewModel.swift in Sources */,
+				C1EF191B258A145000149E4F /* LoginViewModel.swift in Sources */,
+				C1B588F8258A11FA007AB53C /* AuthenticationService.swift in Sources */,
+				C1EF1955258B1F2E00149E4F /* FirestoreClient.swift in Sources */,
+				C1EF192C258A288A00149E4F /* HomeViewController.swift in Sources */,
+				C1EF19A0258B341600149E4F /* DatastoreService.swift in Sources */,
+				C1EF19A9258C8AE000149E4F /* AddRemarkViewController.swift in Sources */,
+				C1EF1939258A2ACC00149E4F /* AppCoordinator.swift in Sources */,
+				C1EF1920258A1E0100149E4F /* FirebaseClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +620,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +675,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -433,11 +687,13 @@
 		};
 		C1B588BD2589CC7B007AB53C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5B26A8BD245A91A08F31CF0 /* Pods-Landmark Remark.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Landmark Remark/Info.plist";
+				DEVELOPMENT_TEAM = J4976VY2YM;
+				INFOPLIST_FILE = Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,11 +707,13 @@
 		};
 		C1B588BE2589CC7B007AB53C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14794F3A7A172A5F8E1D1885 /* Pods-Landmark Remark.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Landmark Remark/Info.plist";
+				DEVELOPMENT_TEAM = J4976VY2YM;
+				INFOPLIST_FILE = Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +727,7 @@
 		};
 		C1B588C02589CC7B007AB53C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80DC136F3F62615AA5A60BCB /* Pods-Landmark RemarkTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +749,7 @@
 		};
 		C1B588C12589CC7B007AB53C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A52ADD7165F411CFAF2CE495 /* Pods-Landmark RemarkTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +771,7 @@
 		};
 		C1B588C32589CC7B007AB53C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81F0D4EAF853AB74FDA0CCB8 /* Pods-Landmark Remark-Landmark RemarkUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +791,7 @@
 		};
 		C1B588C42589CC7B007AB53C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F714BC3B4E40D0FFFF1CA175 /* Pods-Landmark Remark-Landmark RemarkUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
