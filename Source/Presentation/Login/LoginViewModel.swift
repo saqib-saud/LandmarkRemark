@@ -36,7 +36,8 @@ class LoginViewModel: LoginProvider {
             case .success:
                 self?.viewController.loginSuccessful()
             case let .failure(error):
-                break
+                self?.viewController.showAlert(forError: error)
+                self?.viewController.hideLoading()
             }
         }
     }

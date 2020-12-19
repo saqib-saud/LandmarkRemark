@@ -9,7 +9,7 @@ protocol AuthenticationUseCase {
 enum AuthenticationError: Error {
     case invalidCredentials
     case noInternet
-    case somethingElseWentWrong
+    case somethingElseWentWrong(message: String?)
 }
 
 class AuthenticationService: AuthenticationUseCase {
@@ -27,7 +27,7 @@ class AuthenticationService: AuthenticationUseCase {
             case .success:
                 completion(.success(Void()))
             case let .failure(error):
-                completion(.failure(.somethingElseWentWrong))
+                completion(.failure(.somethingElseWentWrong(message: error.localizedDescription)))
             }
         }
     }

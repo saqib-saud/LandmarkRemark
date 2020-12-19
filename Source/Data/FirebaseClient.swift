@@ -32,7 +32,7 @@ class FirebaseClient: FirebaseProvider {
     
     func authenticate(withUserName userName: String, password: String, completion: @escaping ((Result<Void, FirebaseError>) -> Void)) {
         Auth.auth().signIn(withEmail: userName, password: password) { authResult, error in
-          guard let authResult = authResult else {
+          guard error == nil else {
             completion(.failure(.somethingWentWrong(message: error?.localizedDescription)))
             
             return

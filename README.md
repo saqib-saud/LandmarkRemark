@@ -61,5 +61,5 @@ Our view controllers are dumb, thus we can skip testing them. ViewControllers pa
  - Annotation Clustering 
 - The ViewController should also inherit from Protocol
 - POP - Showing Activity Indicator
-            - alerts
+            - alerts (retry)
             

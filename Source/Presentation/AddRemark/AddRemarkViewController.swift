@@ -2,7 +2,7 @@
 
 import UIKit
 
-class AddRemarkViewController: UIViewController {
+class AddRemarkViewController: UIViewController, AlertDisplayable {
     // MARK: - Properties
     
     @IBOutlet weak var remarkTextView: UITextView!

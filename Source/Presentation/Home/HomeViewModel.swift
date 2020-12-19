@@ -51,7 +51,7 @@ class HomeViewModel: HomeViewModelProvider {
                 self?.annotations = remarkAnnotations
                 self?.viewController.loadRemark(annotations: remarkAnnotations)
             case let .failure(error):
-                return
+                self?.viewController.showAlert(forError: error)
             }
         }
     }

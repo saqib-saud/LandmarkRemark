@@ -5,7 +5,7 @@ import MapKit
 import CoreLocation
 import Contacts
 
-class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
+class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate, CLLocationManagerDelegate, AlertDisplayable {
     @IBOutlet private weak var mapView: MKMapView!
     private var searchController: UISearchController!
 

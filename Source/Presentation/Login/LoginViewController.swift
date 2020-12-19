@@ -2,7 +2,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate, LoadingDisplayable {
+class LoginViewController: UIViewController, UITextFieldDelegate, LoadingDisplayable, AlertDisplayable {
     // MARK: - IBOutlets
     
     @IBOutlet private weak var userNameField: UITextField!

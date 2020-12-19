@@ -22,7 +22,7 @@ class AddRemarkViewModel: AddRemarkViewModelProvider {
             case .success:
                 self?.viewController.dismiss()
             case let .failure(error):
-                return
+                self?.viewController.showAlert(forError: error)
             }
         }
     }

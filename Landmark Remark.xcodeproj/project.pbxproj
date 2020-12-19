@@ -31,6 +31,7 @@
 		C1EF19B1258C8AED00149E4F /* AddRemarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19B0258C8AED00149E4F /* AddRemarkViewModel.swift */; };
 		C1EF19B7258D81F900149E4F /* UIViewController+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19B6258D81F900149E4F /* UIViewController+LoadingView.swift */; };
 		C1EF19C0258DF75500149E4F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19BF258DF75500149E4F /* LoadingView.swift */; };
+		C1EF19C8258E08C700149E4F /* UIViewController+AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19C7258E08C700149E4F /* UIViewController+AlertDisplayable.swift */; };
 		DC5CBB437CBCCCC2C6E4BBDF /* Pods_Landmark_Remark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF68AA0B9463D006E4378B2 /* Pods_Landmark_Remark.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		C1EF19B0258C8AED00149E4F /* AddRemarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemarkViewModel.swift; sourceTree = "<group>"; };
 		C1EF19B6258D81F900149E4F /* UIViewController+LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingView.swift"; sourceTree = "<group>"; };
 		C1EF19BF258DF75500149E4F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C1EF19C7258E08C700149E4F /* UIViewController+AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertDisplayable.swift"; sourceTree = "<group>"; };
 		C5B26A8BD245A91A08F31CF0 /* Pods-Landmark Remark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark.debug.xcconfig"; path = "Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark.debug.xcconfig"; sourceTree = "<group>"; };
 		F714BC3B4E40D0FFFF1CA175 /* Pods-Landmark Remark-Landmark RemarkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark-Landmark RemarkUITests.release.xcconfig"; path = "Target Support Files/Pods-Landmark Remark-Landmark RemarkUITests/Pods-Landmark Remark-Landmark RemarkUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -271,6 +273,7 @@
 		C1EF19B5258D81E400149E4F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C1EF19C7258E08C700149E4F /* UIViewController+AlertDisplayable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1B588EE258A11BB007AB53C /* LoginViewController.swift in Sources */,
+				C1EF19C8258E08C700149E4F /* UIViewController+AlertDisplayable.swift in Sources */,
 				C1B588962589CC7A007AB53C /* AppDelegate.swift in Sources */,
 				C1EF1950258ADBB200149E4F /* RemarkView.swift in Sources */,
 				C1B588982589CC7A007AB53C /* SceneDelegate.swift in Sources */,
