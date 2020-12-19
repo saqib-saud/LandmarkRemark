@@ -60,3 +60,6 @@ Our view controllers are dumb, thus we can skip testing them. ViewControllers pa
  - Linting and Swift Formatting 
  - Annotation Clustering 
 - The ViewController should also inherit from Protocol
+- POP - Showing Activity Indicator
+            - alerts
+            

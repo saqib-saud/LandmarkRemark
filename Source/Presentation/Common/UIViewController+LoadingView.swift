@@ -2,23 +2,15 @@
 
 import UIKit
 
+protocol LoadingDisplayable: class {
+    var loadingView: LoadingView? { get set }
+    func showLoading()
+    func hideLoading()
+}
 
-extension UIViewController {
-    private static var customLoadingView: LoadingView?
-    private static var isShowingLoadingScreen = false
-
-    var loadingView: LoadingView? {
-        get { return UIViewController.customLoadingView }
-        set { UIViewController.customLoadingView = newValue }
-    }
-
+extension LoadingDisplayable where Self: UIViewController {
     func showLoading() {
         DispatchQueue.main.async { [weak self] in
-            guard !UIViewController.isShowingLoadingScreen else {
-                return
-            }
-            
-            UIViewController.isShowingLoadingScreen = true
             self?.setupLoadingView()
             self?.loadingView?.show()
         }
@@ -26,7 +18,6 @@ extension UIViewController {
 
     func hideLoading() {
         DispatchQueue.main.async { [weak self] in
-            UIViewController.isShowingLoadingScreen = false
             self?.loadingView?.hide()
             self?.removeLoadingView()
         }
@@ -54,5 +45,3 @@ extension UIViewController {
         }
     }
 }
-
-

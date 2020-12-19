@@ -2,8 +2,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
-    
+class LoginViewController: UIViewController, UITextFieldDelegate, LoadingDisplayable {
     // MARK: - IBOutlets
     
     @IBOutlet private weak var userNameField: UITextField!
@@ -15,6 +14,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     lazy var viewModel = LoginViewModel(viewController: self)
     var coordinator: AuthenticateCoordinator?
+    
+    var loadingView: LoadingView?
+
     // MARK:-
     
     var isLoginButtonEnabled: Bool = false {
