@@ -4,11 +4,12 @@ import Foundation
 
 protocol HomeViewModelProvider {
     func searchBarDidSearch(text: String)
+    func didUpdateLocation(latitude: Double, longitude: Double) 
 }
 
 class HomeViewModel: HomeViewModelProvider {
     private let viewController: HomeViewController
-    private let datastore: DatastoreProvider
+    private var datastore: DatastoreProvider
     private var annotations: [Remark]?
     private var filteredAnnotations: [Remark]?
     
@@ -17,7 +18,7 @@ class HomeViewModel: HomeViewModelProvider {
         self.datastore = datastore
     }
     
-    func viewDidLoad() {
+    func viewWillAppear() {
         fetchRemarks { result in
             
         }
@@ -33,6 +34,10 @@ class HomeViewModel: HomeViewModelProvider {
         }
         
         viewController.loadRemark(annotations: filteredAnnotations!)
+    }
+    
+    func didUpdateLocation(latitude: Double, longitude: Double) {
+        datastore.remark.coordinate = RemarkPO.Coordinate(latitude: latitude, longitude: longitude)
     }
     
     private func fetchRemarks(completion: @escaping ((Result<[RemarkPO], FirebaseError>) -> Void)) {

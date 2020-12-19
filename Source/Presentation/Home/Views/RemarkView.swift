@@ -55,7 +55,7 @@ class Remark: NSObject, MKAnnotation {
     
     init(remarkPO: RemarkPO) {
         self.userName = remarkPO.userName ?? ""
-        self.remark = remarkPO.remark
+        self.remark = remarkPO.note
         let coordinate = remarkPO.coordinate
         self.coordinate = CLLocationCoordinate2D(latitude: coordinate?.latitude ?? 0.0, longitude: coordinate?.longitude ?? 0.0)
         

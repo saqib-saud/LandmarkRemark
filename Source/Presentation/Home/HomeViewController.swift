@@ -5,11 +5,16 @@ import MapKit
 import CoreLocation
 import Contacts
 
-class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate {
+class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet private weak var mapView: MKMapView!
     private var searchController: UISearchController!
 
-//    private var locationManager: CLLocationManager?
+    private lazy var locationManager: CLLocationManager = {
+        let locationManager = CLLocationManager()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = self
+        return locationManager
+    }()
     
     // MARK: - Injected Properties
     
@@ -18,9 +23,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.viewDidLoad()
-        
+                
+        locationManager.startUpdatingLocation()
         searchController = UISearchController()
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
@@ -28,7 +32,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self, action: #selector(didTapAddRemark))
         
-//        let initialLocation = CLLocation(latitude: 21.4765, longitude: -157.9647)
 //        centerToLocation(initialLocation)
         
         let oahuCenter = CLLocation(latitude: 21.4765, longitude: -157.9647)
@@ -52,13 +55,12 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
           remark: "Waikiki Gateway Park",
           coordinate: CLLocationCoordinate2D(latitude: 21.4765, longitude: -157.9647))
         mapView.addAnnotation(artwork)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        
-//        locationManager = CLLocationManager()
-//        locationManager?.delegate = self
-//        locationManager?.requestAlwaysAuthorization()
-        
-
+        viewModel.viewWillAppear()
     }
     
     func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
@@ -71,18 +73,23 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
     
     // MARK: - LocationManager Delegate
     
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        if let location = locations.last{
-//            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-//            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-//            self.mapView.setRegion(region, animated: true)
-//        }
-//    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            mapView.setRegion(region, animated: true)
+            viewModel.didUpdateLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    
     func loadRemark(annotations: [Remark]) {
         DispatchQueue.main.async {
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.mapView.addAnnotations(annotations)
-//            self.centerToLocation(CLLocation(latitude: annotations[0].coordinate.latitude, longitude: annotations[0].coordinate.longitude))
         }
     }
     

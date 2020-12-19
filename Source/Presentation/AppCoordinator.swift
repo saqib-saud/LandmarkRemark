@@ -52,6 +52,8 @@ class AppCoordinator: AuthenticateCoordinator, HomeCoordinator, AddRemarkCoordin
     }
     
     func dismissViewController() {
-        navigationController.dismiss(animated: true)
+        navigationController.dismiss(animated: true) { [weak self] in
+            self?.navigationController.topViewController?.viewWillAppear(true)
+        }
     }
 }
