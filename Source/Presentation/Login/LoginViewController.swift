@@ -3,6 +3,7 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    
     // MARK: - IBOutlets
     
     @IBOutlet private weak var userNameField: UITextField!
@@ -44,6 +45,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Actions
     
     @IBAction func authenticateUser(_ sender: UIButton) {
+        userNameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
+        showLoading()
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+//            self.hideLoading()
+//        }
         viewModel.authenticateUser(userName: userNameField.text, password: passwordField.text)
     }
     
@@ -52,6 +61,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        hideLoading()
         coordinator.presentHome()
     }
     
