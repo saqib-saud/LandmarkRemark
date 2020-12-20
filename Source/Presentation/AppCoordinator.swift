@@ -9,6 +9,7 @@ protocol AuthenticateCoordinator {
 protocol HomeCoordinator {
     func presentAddRemark()
     func presentShowRemark(_ remark: String?)
+    func logout()
 }
 
 protocol AddRemarkCoordinator {
@@ -61,6 +62,10 @@ class AppCoordinator: AuthenticateCoordinator, HomeCoordinator, AddRemarkCoordin
         viewController.coordinator = self
         viewController.remark = remark
         navigationController.present(UINavigationController(rootViewController: viewController), animated: true)
+    }
+    
+    func logout() {
+        navigationController.popViewController(animated: true)
     }
     
     func dismissViewController() {

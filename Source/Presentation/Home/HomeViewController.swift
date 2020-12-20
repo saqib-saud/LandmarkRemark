@@ -31,6 +31,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
         navigationItem.searchController = searchController
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self, action: #selector(didTapAddRemark))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout",
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(didTapLogout))
         
         mapView.delegate = self
         mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "RemarkAnnotation")
@@ -112,9 +116,13 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
         coordinator?.presentShowRemark(remark.remark)
     }
     
-    // MARK: - Action
+    // MARK: - Actions
     
     @objc func didTapAddRemark() {
         coordinator?.presentAddRemark()
+    }
+    
+    @objc func didTapLogout() {
+        coordinator?.logout()
     }
 }
