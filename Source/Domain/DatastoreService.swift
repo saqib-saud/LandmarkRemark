@@ -2,14 +2,14 @@
 
 import Foundation
 
-protocol DatastoreProvider {
+protocol DatastoreUseCase {
     var remark: RemarkPO { get set }
     func fetchRemarks(completion: @escaping ((Result<[RemarkPO]?, FirebaseError>) -> Void))
     func addRemark(completion: @escaping ((Result<Void, FirebaseError>) -> Void))
 }
 
-class DatastoreService: DatastoreProvider {
-    static let sharedInstance: DatastoreProvider = DatastoreService()
+class DatastoreService: DatastoreUseCase {
+    static let sharedInstance: DatastoreUseCase = DatastoreService()
     
     var remark: RemarkPO
     

@@ -9,13 +9,13 @@ protocol HomeViewModelProvider {
 
 class HomeViewModel: HomeViewModelProvider {
     private let viewController: HomeViewController
-    private var datastore: DatastoreProvider
+    private var datastoreService: DatastoreUseCase
     private var annotations: [Remark]?
     private var filteredAnnotations: [Remark]?
     
-    init(viewController: HomeViewController, datastore: DatastoreProvider = DatastoreService.sharedInstance) {
+    init(viewController: HomeViewController, datastoreService: DatastoreUseCase = DatastoreService.sharedInstance) {
         self.viewController = viewController
-        self.datastore = datastore
+        self.datastoreService = datastoreService
     }
     
     func viewWillAppear() {
@@ -37,11 +37,11 @@ class HomeViewModel: HomeViewModelProvider {
     }
     
     func didUpdateLocation(latitude: Double, longitude: Double) {
-        datastore.remark.coordinate = RemarkPO.Coordinate(latitude: latitude, longitude: longitude)
+        datastoreService.remark.coordinate = RemarkPO.Coordinate(latitude: latitude, longitude: longitude)
     }
     
     private func fetchRemarks(completion: @escaping ((Result<[RemarkPO], FirebaseError>) -> Void)) {
-        datastore.fetchRemarks { [weak self] result in
+        datastoreService.fetchRemarks { [weak self] result in
             switch result {
             case let .success(remarks):
                 guard let remarkAnnotations = remarks?.compactMap({ Remark(remarkPO: $0) }) else {

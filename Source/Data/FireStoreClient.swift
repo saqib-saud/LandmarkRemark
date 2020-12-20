@@ -2,52 +2,20 @@
 
 import Firebase
 
-struct RemarkPO {
-    let userName: String?
-    var note: String?
-    var coordinate: Coordinate?
-    
-    init(withDocument document: QueryDocumentSnapshot) {
-        userName = document.get("username") as? String
-        note = document.get("note") as? String
-        
-        if let geoPoint =  document.get("location") as? GeoPoint {
-            coordinate = Coordinate(withGeoPoint: geoPoint)
-        } else {
-            coordinate = nil
-        }
-    }
-    
-    init() {
-        userName = nil
-        note = nil
-        coordinate = nil
-    }
-    
-    struct Coordinate {
-        let latitude: Double
-        let longitude: Double
-        
-        init(withGeoPoint geoPoint: GeoPoint) {
-            latitude = geoPoint.latitude
-            longitude = geoPoint.longitude
-        }
-        
-        init(latitude: Double, longitude: Double) {
-            self.latitude = latitude
-            self.longitude = longitude
-        }
-    }
-}
-
 protocol FirestoreProvider {
     func fetchRemarks(completion: @escaping ((Result<[RemarkPO]?, FirebaseError>) -> Void))
     func addRemark(_ remark: RemarkPO, completion: @escaping ((Result<Void, FirebaseError>) -> Void))
 }
 
 class FirestoreClient: FirestoreProvider {
+    enum CodingKeys: String {
+        case username = "username"
+        case note = "note"
+        case location = "location"
+    }
+    
     static let sharedInstance: FirestoreProvider = FirestoreClient()
-
+    
     let db = Firestore.firestore()
     
     func fetchRemarks(completion: @escaping ((Result<[RemarkPO]?, FirebaseError>) -> Void)) {
@@ -55,7 +23,17 @@ class FirestoreClient: FirestoreProvider {
             if let error = error {
                 completion(.failure(.somethingWentWrong(message: error.localizedDescription)))
             } else {
-                let remarks = querySnapshot?.documents.map({ RemarkPO(withDocument: $0) })
+                let remarks = querySnapshot?.documents.map({ document -> RemarkPO in
+                    let userName = document.get(CodingKeys.username.rawValue) as? String
+                    let note = document.get(CodingKeys.note.rawValue) as? String
+                    let location = document.get(CodingKeys.location.rawValue) as? GeoPoint
+                    
+                    return RemarkPO(withUserName: userName,
+                                    note: note,
+                                    latitude: location?.latitude,
+                                    longitude: location?.longitude)
+                })
+                
                 completion(.success(remarks))
             }
         }
