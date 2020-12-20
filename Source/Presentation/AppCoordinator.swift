@@ -8,6 +8,7 @@ protocol AuthenticateCoordinator {
 
 protocol HomeCoordinator {
     func presentAddRemark()
+    func presentShowRemark(_ remark: String?)
 }
 
 protocol AddRemarkCoordinator {
@@ -48,6 +49,17 @@ class AppCoordinator: AuthenticateCoordinator, HomeCoordinator, AddRemarkCoordin
         }
         
         viewController.coordinator = self
+        navigationController.present(UINavigationController(rootViewController: viewController), animated: true)
+    }
+    
+    func presentShowRemark(_ remark: String?) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(identifier: "AddRemarkViewController") as? AddRemarkViewController else {
+            return
+        }
+        
+        viewController.coordinator = self
+        viewController.remark = remark
         navigationController.present(UINavigationController(rootViewController: viewController), animated: true)
     }
     

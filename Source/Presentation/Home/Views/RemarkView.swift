@@ -2,42 +2,6 @@
 
 import MapKit
 
-class RemarkView: MKAnnotationView {
-    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
-            super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-
-            frame = CGRect(x: 0, y: 0, width: 40, height: 50)
-            centerOffset = CGPoint(x: 0, y: -frame.size.height / 2)
-
-            canShowCallout = true
-        }
-    
-    @available(*, unavailable)
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-  override var annotation: MKAnnotation? {
-    willSet {
-      guard let artwork = newValue as? Remark else {
-        return
-      }
-
-      canShowCallout = true
-      calloutOffset = CGPoint(x: -5, y: 5)
-      
-      
-      let detailLabel = UILabel()
-      detailLabel.numberOfLines = 0
-      detailLabel.font = detailLabel.font.withSize(12)
-      detailLabel.text = artwork.subtitle
-      detailCalloutAccessoryView = detailLabel
-    }
-  }
-}
-
-
 class Remark: NSObject, MKAnnotation {
     let userName: String
     let remark: String?

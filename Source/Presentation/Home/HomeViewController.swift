@@ -24,51 +24,22 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        locationManager.startUpdatingLocation()
+        locationManager.startMonitoringSignificantLocationChanges()
         searchController = UISearchController()
         searchController.searchBar.delegate = self
+
         navigationItem.searchController = searchController
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self, action: #selector(didTapAddRemark))
         
-//        centerToLocation(initialLocation)
-        
-        let oahuCenter = CLLocation(latitude: 21.4765, longitude: -157.9647)
-        let region = MKCoordinateRegion(
-          center: oahuCenter.coordinate,
-          latitudinalMeters: 50000,
-          longitudinalMeters: 60000)
-//        mapView.setCameraBoundary(
-//          MKMapView.CameraBoundary(coordinateRegion: region),
-//          animated: true)
-        
-//        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 200000)
-//        mapView.setCameraZoomRange(zoomRange, animated: true)
-        
         mapView.delegate = self
-
-        mapView.register(RemarkView.self, forAnnotationViewWithReuseIdentifier: "RemarkAnnotation")
-        
-        let artwork = Remark(
-          userName: "King David Kalakaua",
-          remark: "Waikiki Gateway Park",
-          coordinate: CLLocationCoordinate2D(latitude: 21.4765, longitude: -157.9647))
-        mapView.addAnnotation(artwork)
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "RemarkAnnotation")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         viewModel.viewWillAppear()
-    }
-    
-    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
-      let coordinateRegion = MKCoordinateRegion(
-        center: location.coordinate,
-        latitudinalMeters: regionRadius,
-        longitudinalMeters: regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
     }
     
     // MARK: - LocationManager Delegate
@@ -78,12 +49,13 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             mapView.setRegion(region, animated: true)
+
             viewModel.didUpdateLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+        showAlert(forError: error)
     }
     
     func loadRemark(annotations: [Remark]) {
@@ -97,44 +69,47 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchBarDidSearch(text: searchText)
-//      searchFor(searchText)
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//      resultsTableViewController.countries = nil
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        viewModel.searchBarDidSearch(text: "")
     }
     
     // MARK: - MapView Delegate
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//
-//      guard let annotation = annotation as? Remark else {
-//        return nil
-//      }
-//
-//      let identifier = "RemarkAnnotation"
-//      var view: MKAnnotationView
-//
-//      if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? RemarkView {
-//        dequeuedView.annotation = annotation
-//        view = dequeuedView
-//      } else {
-//        view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//        view.canShowCallout = true
-//        view.calloutOffset = CGPoint(x: -5, y: 5)
-//        view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-//      }
-//      return view
-//    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is Remark else { return nil }
+
+        let identifier = "RemarkAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+            
+        } else {
+            annotationView!.annotation = annotation
+        }
+        
+        if let markerAnnotationView = annotationView as? MKMarkerAnnotationView {
+            markerAnnotationView.animatesWhenAdded = true
+            markerAnnotationView.canShowCallout = true
+            markerAnnotationView.markerTintColor = .blue
+            let rightButton = UIButton(type: .detailDisclosure)
+            markerAnnotationView.rightCalloutAccessoryView = rightButton
+        }
+
+        return annotationView
+    }
     
     func mapView(_ mapView: MKMapView,
                  annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-        guard let artwork = view.annotation as? Remark else {
+        guard let remark = view.annotation as? Remark else {
             return
         }
         
-        //      let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-        //      artwork.mapItem?.openInMaps(launchOptions: launchOptions)
+        coordinator?.presentShowRemark(remark.remark)
     }
     
     // MARK: - Action

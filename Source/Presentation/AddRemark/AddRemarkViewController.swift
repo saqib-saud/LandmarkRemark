@@ -10,18 +10,26 @@ class AddRemarkViewController: UIViewController, AlertDisplayable {
     lazy var viewModel = AddRemarkViewModel(viewController: self)
     var coordinator: AddRemarkCoordinator?
 
+    var remark: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        remarkTextView.layer.cornerRadius = 5
+        remarkTextView.clipsToBounds = true
+    
+        if remark != nil {
+            remarkTextView.text = remark
+            remarkTextView.isEditable = false
+        } else{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
+                                                               target: self,
+                                                               action: #selector(didTapAdd))
+        }
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
                                                            target: self,
                                                            action: #selector(didTapCancel))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
-                                                           target: self,
-                                                           action: #selector(didTapAdd))
-        
-        remarkTextView.layer.cornerRadius = 5
-        remarkTextView.clipsToBounds = true
     }
     
     func dismiss() {
