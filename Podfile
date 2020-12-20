@@ -9,6 +9,9 @@ target 'Landmark Remark' do
   
   target 'Landmark RemarkTests' do
     inherit! :search_paths
+    use_frameworks!
+      pod 'Nimble'
+      pod 'Quick'
   end
 end
 
