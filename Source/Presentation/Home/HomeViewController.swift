@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.startUpdatingLocation()
         searchController = UISearchController()
         searchController.searchBar.delegate = self
 
