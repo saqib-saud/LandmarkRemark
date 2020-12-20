@@ -13,7 +13,6 @@
 		C1B5889D2589CC7A007AB53C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B5889B2589CC7A007AB53C /* Main.storyboard */; };
 		C1B5889F2589CC7A007AB53C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1B5889E2589CC7A007AB53C /* Assets.xcassets */; };
 		C1B588A22589CC7A007AB53C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B588A02589CC7A007AB53C /* LaunchScreen.storyboard */; };
-		C1B588AD2589CC7B007AB53C /* Landmark_RemarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588AC2589CC7B007AB53C /* Landmark_RemarkTests.swift */; };
 		C1B588B82589CC7B007AB53C /* Landmark_RemarkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588B72589CC7B007AB53C /* Landmark_RemarkUITests.swift */; };
 		C1B588C92589CCA3007AB53C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1B588C82589CCA3007AB53C /* GoogleService-Info.plist */; };
 		C1B588EE258A11BB007AB53C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588ED258A11BB007AB53C /* LoginViewController.swift */; };
@@ -32,6 +31,7 @@
 		C1EF19C0258DF75500149E4F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19BF258DF75500149E4F /* LoadingView.swift */; };
 		C1EF19C8258E08C700149E4F /* UIViewController+AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19C7258E08C700149E4F /* UIViewController+AlertDisplayable.swift */; };
 		C1EF19FB258F71C100149E4F /* RemarkPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19FA258F71C100149E4F /* RemarkPO.swift */; };
+		C1EF1A52258F80A400149E4F /* FirebaseClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1A51258F80A400149E4F /* FirebaseClientSpec.swift */; };
 		DC5CBB437CBCCCC2C6E4BBDF /* Pods_Landmark_Remark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF68AA0B9463D006E4378B2 /* Pods_Landmark_Remark.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +66,6 @@
 		C1B588A12589CC7A007AB53C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1B588A32589CC7A007AB53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1B588A82589CC7A007AB53C /* Landmark RemarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Landmark RemarkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1B588AC2589CC7B007AB53C /* Landmark_RemarkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark_RemarkTests.swift; sourceTree = "<group>"; };
 		C1B588AE2589CC7B007AB53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1B588B32589CC7B007AB53C /* Landmark RemarkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Landmark RemarkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B588B72589CC7B007AB53C /* Landmark_RemarkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark_RemarkUITests.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		C1EF19BF258DF75500149E4F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C1EF19C7258E08C700149E4F /* UIViewController+AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertDisplayable.swift"; sourceTree = "<group>"; };
 		C1EF19FA258F71C100149E4F /* RemarkPO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkPO.swift; sourceTree = "<group>"; };
+		C1EF1A51258F80A400149E4F /* FirebaseClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClientSpec.swift; sourceTree = "<group>"; };
 		C5B26A8BD245A91A08F31CF0 /* Pods-Landmark Remark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark.debug.xcconfig"; path = "Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,7 +181,9 @@
 		C1B588AB2589CC7B007AB53C /* Landmark RemarkTests */ = {
 			isa = PBXGroup;
 			children = (
-				C1B588AC2589CC7B007AB53C /* Landmark_RemarkTests.swift */,
+				C1EF1A4B258F7ED000149E4F /* Presentation */,
+				C1EF1A4C258F7EDC00149E4F /* Domain */,
+				C1EF1A4D258F7EE300149E4F /* Data */,
 				C1B588AE2589CC7B007AB53C /* Info.plist */,
 			);
 			path = "Landmark RemarkTests";
@@ -296,6 +298,28 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C1EF1A4B258F7ED000149E4F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C1EF1A4C258F7EDC00149E4F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C1EF1A4D258F7EE300149E4F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C1EF1A51258F80A400149E4F /* FirebaseClientSpec.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,7 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1B588AD2589CC7B007AB53C /* Landmark_RemarkTests.swift in Sources */,
+				C1EF1A52258F80A400149E4F /* FirebaseClientSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,6 +848,129 @@
 			};
 			name = Release;
 		};
+		C1EF1A71258F863000149E4F /* xctest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"XCTEST=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = xctest;
+		};
+		C1EF1A72258F863000149E4F /* xctest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5B26A8BD245A91A08F31CF0 /* Pods-Landmark Remark.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J4976VY2YM;
+				INFOPLIST_FILE = Source/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Saqib.Landmark-Remark";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = xctest;
+		};
+		C1EF1A73258F863000149E4F /* xctest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80DC136F3F62615AA5A60BCB /* Pods-Landmark RemarkTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Landmark RemarkTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Saqib.Landmark-RemarkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Landmark Remark.app/Landmark Remark";
+			};
+			name = xctest;
+		};
+		C1EF1A74258F863000149E4F /* xctest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Landmark RemarkUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Saqib.Landmark-RemarkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Landmark Remark";
+			};
+			name = xctest;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -831,6 +978,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1B588BA2589CC7B007AB53C /* Debug */,
+				C1EF1A71258F863000149E4F /* xctest */,
 				C1B588BB2589CC7B007AB53C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -840,6 +988,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1B588BD2589CC7B007AB53C /* Debug */,
+				C1EF1A72258F863000149E4F /* xctest */,
 				C1B588BE2589CC7B007AB53C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -849,6 +998,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1B588C02589CC7B007AB53C /* Debug */,
+				C1EF1A73258F863000149E4F /* xctest */,
 				C1B588C12589CC7B007AB53C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -858,6 +1008,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1B588C32589CC7B007AB53C /* Debug */,
+				C1EF1A74258F863000149E4F /* xctest */,
 				C1B588C42589CC7B007AB53C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

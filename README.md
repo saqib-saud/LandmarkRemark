@@ -63,3 +63,7 @@ Our view controllers are dumb, thus we can skip testing them. ViewControllers pa
 - POP - Showing Activity Indicator
             - alerts (retry)
             
+Unit Testing External Library
+ - explain why skipping call was necessary
+
+            

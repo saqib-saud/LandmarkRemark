@@ -4,9 +4,15 @@ import Foundation
 import Firebase
 
 protocol FirebaseProvider {
-    func configureFirebase()
+    static func configureFirebase()
     func authenticate(withUserName userName: String, password: String, completion: @escaping ((Result<Void, FirebaseError>) -> Void))
 }
+
+protocol FIRAuthProvider {
+    func signIn(withEmail email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
+}
+
+extension Auth: FIRAuthProvider {}
 
 enum FirebaseError: Error {
     init?(authError: AuthErrors) {
@@ -25,13 +31,22 @@ enum FirebaseError: Error {
 
 class FirebaseClient: FirebaseProvider {
     static let sharedInstance: FirebaseProvider = FirebaseClient()
+    let authClient: FIRAuthProvider
     
-    func configureFirebase() {
-        FirebaseApp.configure()
+    init(authClient: FIRAuthProvider = Auth.auth()) {
+        self.authClient = authClient
     }
     
-    func authenticate(withUserName userName: String, password: String, completion: @escaping ((Result<Void, FirebaseError>) -> Void)) {
-        Auth.auth().signIn(withEmail: userName, password: password) { authResult, error in
+    static func configureFirebase() {
+        #if !XCTEST
+        FirebaseApp.configure()
+        #endif
+    }
+    
+    func authenticate(withUserName userName: String,
+                      password: String,
+                      completion: @escaping ((Result<Void, FirebaseError>) -> Void)) {
+        authClient.signIn(withEmail: userName, password: password) { authResult, error in
           guard error == nil else {
             completion(.failure(.somethingWentWrong(message: error?.localizedDescription)))
             

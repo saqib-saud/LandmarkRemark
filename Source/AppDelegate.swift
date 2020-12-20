@@ -5,7 +5,11 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseClient.sharedInstance.configureFirebase()
+        
+        // When running tests we don't want to configure firebase
+        #if !XCTEST
+        FirebaseClient.configureFirebase()
+        #endif
         return true
     }
 
