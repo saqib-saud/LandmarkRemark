@@ -33,6 +33,8 @@
 		C1EF19FB258F71C100149E4F /* RemarkPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19FA258F71C100149E4F /* RemarkPO.swift */; };
 		C1EF1A52258F80A400149E4F /* FirebaseClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1A51258F80A400149E4F /* FirebaseClientSpec.swift */; };
 		C1EF1AB0258F98D100149E4F /* FirestoreClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AAF258F98D100149E4F /* FirestoreClientSpec.swift */; };
+		C1EF1AB52590A42500149E4F /* AuthenticationServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AB42590A42500149E4F /* AuthenticationServiceSpec.swift */; };
+		C1EF1ABA2590A43700149E4F /* DatastoreServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AB92590A43700149E4F /* DatastoreServiceSpec.swift */; };
 		DC5CBB437CBCCCC2C6E4BBDF /* Pods_Landmark_Remark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF68AA0B9463D006E4378B2 /* Pods_Landmark_Remark.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,8 @@
 		C1EF19FA258F71C100149E4F /* RemarkPO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkPO.swift; sourceTree = "<group>"; };
 		C1EF1A51258F80A400149E4F /* FirebaseClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClientSpec.swift; sourceTree = "<group>"; };
 		C1EF1AAF258F98D100149E4F /* FirestoreClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreClientSpec.swift; sourceTree = "<group>"; };
+		C1EF1AB42590A42500149E4F /* AuthenticationServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceSpec.swift; sourceTree = "<group>"; };
+		C1EF1AB92590A43700149E4F /* DatastoreServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatastoreServiceSpec.swift; sourceTree = "<group>"; };
 		C5B26A8BD245A91A08F31CF0 /* Pods-Landmark Remark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark.debug.xcconfig"; path = "Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -316,6 +320,8 @@
 		C1EF1A4C258F7EDC00149E4F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C1EF1AB42590A42500149E4F /* AuthenticationServiceSpec.swift */,
+				C1EF1AB92590A43700149E4F /* DatastoreServiceSpec.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -570,7 +576,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EF1ABA2590A43700149E4F /* DatastoreServiceSpec.swift in Sources */,
 				C1EF1A52258F80A400149E4F /* FirebaseClientSpec.swift in Sources */,
+				C1EF1AB52590A42500149E4F /* AuthenticationServiceSpec.swift in Sources */,
 				C1EF1AB0258F98D100149E4F /* FirestoreClientSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

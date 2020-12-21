@@ -1,5 +1,19 @@
 #  ReadMe!
 
+todo: Add null value check on note
+# Requirements
+
+## Explicit Requirements
+## Implicit Requirements
+    - Login
+    - Logout
+    - Error handling and retry on failure
+    
+## Further improvements
+    - Offline Support
+    - Session Management
+    - Annotation Clustering
+    
 # Which Architecture?
 
 When choosing architecture for your application there is no silver bullet. The choice of architecture depends on team expertise and time at hand.

@@ -48,5 +48,3 @@ private class FIRStoreMock: FIRStoreProvider {
         return Firestore.firestore().collection(collectionPath)
     }
 }
-
-

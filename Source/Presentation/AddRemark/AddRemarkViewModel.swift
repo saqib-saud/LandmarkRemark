@@ -8,16 +8,16 @@ protocol AddRemarkViewModelProvider {
 
 class AddRemarkViewModel: AddRemarkViewModelProvider {
     private let viewController: AddRemarkViewController
-    private var datastoreService: DatastoreUseCase
+    private var dataStoreService: DataStoreUseCase
     
-    init(viewController: AddRemarkViewController, datastoreService: DatastoreUseCase = DatastoreService.sharedInstance) {
+    init(viewController: AddRemarkViewController, dataStoreService: DataStoreUseCase = DataStoreService.sharedInstance) {
         self.viewController = viewController
-        self.datastoreService = datastoreService
+        self.dataStoreService = dataStoreService
     }
     
     func addRemark(text: String?) {
-        datastoreService.remark.note = text
-        datastoreService.addRemark { [weak self] result in
+        dataStoreService.remark.note = text
+        dataStoreService.addRemark { [weak self] result in
             switch result {
             case .success:
                 self?.viewController.dismiss()
