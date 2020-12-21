@@ -35,10 +35,9 @@ class FirebaseClientSpec: QuickSpec {
 
 // MARK: - Mock
 
-class FIRAuthMock: FIRAuthProvider {
+private class FIRAuthMock: FIRAuthProvider {
     var signInWithEmailCalled = false
 
-    
     func signIn(withEmail email: String,
                 password: String,
                 completion: ((AuthDataResult?, Error?) -> Void)?) {

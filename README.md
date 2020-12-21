@@ -65,5 +65,6 @@ Our view controllers are dumb, thus we can skip testing them. ViewControllers pa
             
 Unit Testing External Library
  - explain why skipping call was necessary
+  - testing firebase is difficult because of private initialisers 
 
             

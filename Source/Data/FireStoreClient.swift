@@ -7,6 +7,18 @@ protocol FirestoreProvider {
     func addRemark(_ remark: RemarkPO, completion: @escaping ((Result<Void, FirebaseError>) -> Void))
 }
 
+protocol FIRAuthUserProvider {
+    var currentUser: User? { get }
+}
+
+extension Auth: FIRAuthUserProvider {}
+
+protocol FIRStoreProvider {
+     func collection(_ collectionPath: String) -> CollectionReference
+}
+
+extension Firestore: FIRStoreProvider {}
+
 class FirestoreClient: FirestoreProvider {
     enum CodingKeys: String {
         case username = "username"
@@ -16,10 +28,16 @@ class FirestoreClient: FirestoreProvider {
     
     static let sharedInstance: FirestoreProvider = FirestoreClient()
     
-    let db = Firestore.firestore()
+    let authClient: FIRAuthUserProvider
+    let dbClient: FIRStoreProvider
+
+    init(authClient: FIRAuthUserProvider = Auth.auth(), dbClient: FIRStoreProvider = Firestore.firestore()) {
+        self.authClient = authClient
+        self.dbClient = dbClient
+    }
     
     func fetchRemarks(completion: @escaping ((Result<[RemarkPO]?, FirebaseError>) -> Void)) {
-        db.collection("remarks").getDocuments() { (querySnapshot, error) in
+        dbClient.collection("remarks").getDocuments() { (querySnapshot, error) in
             if let error = error {
                 completion(.failure(.somethingWentWrong(message: error.localizedDescription)))
             } else {
@@ -40,7 +58,6 @@ class FirestoreClient: FirestoreProvider {
     }
     
     func addRemark(_ remark: RemarkPO, completion: @escaping ((Result<Void, FirebaseError>) -> Void)) {
-        let db = Firestore.firestore()
         guard let username = Auth.auth().currentUser?.displayName ?? Auth.auth().currentUser?.email,
               let note = remark.note,
               let latitude = remark.coordinate?.latitude,
@@ -51,7 +68,7 @@ class FirestoreClient: FirestoreProvider {
         
         let geoPoint = GeoPoint.init(latitude: latitude, longitude: longitude)
         
-        db.collection("remarks").addDocument(data: ["note": note,
+        dbClient.collection("remarks").addDocument(data: ["note": note,
                                                     "username": username,
                                                     "location": geoPoint]) { error in
             if let error = error {

@@ -31,6 +31,7 @@ enum FirebaseError: Error {
 
 class FirebaseClient: FirebaseProvider {
     static let sharedInstance: FirebaseProvider = FirebaseClient()
+   
     let authClient: FIRAuthProvider
     
     init(authClient: FIRAuthProvider = Auth.auth()) {
