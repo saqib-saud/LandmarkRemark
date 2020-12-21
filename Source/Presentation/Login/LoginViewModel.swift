@@ -3,20 +3,17 @@
 import Foundation
 
 protocol LoginProvider {
-    
+    func validateInput(userName: String?, password: String?)
+    func authenticateUser(userName: String?, password: String?)
 }
 
 class LoginViewModel: LoginProvider {
     let authenticationService: AuthenticationUseCase
-    let viewController: LoginViewController
+    let viewController: LoginPresenter
     
-    init(viewController: LoginViewController, authenticationService: AuthenticationUseCase = AuthenticationService.sharedInstance) {
+    init(viewController: LoginPresenter, authenticationService: AuthenticationUseCase = AuthenticationService.sharedInstance) {
         self.viewController = viewController
         self.authenticationService = authenticationService
-    }
-    
-    func viewDidLoad() {
-        
     }
     
     func validateInput(userName: String?, password: String?) {
@@ -26,6 +23,7 @@ class LoginViewModel: LoginProvider {
             viewController.isLoginButtonEnabled = false
         }
     }
+    
     func authenticateUser(userName: String?, password: String?) {
         guard let userName = userName, let password = password else {
             return
@@ -34,13 +32,11 @@ class LoginViewModel: LoginProvider {
         authenticationService.authenticateUser(userName: userName, password: password) { [weak self] result in
             switch result {
             case .success:
-                self?.viewController.loginSuccessful()
+                self?.viewController.showHomeScreen()
             case let .failure(error):
                 self?.viewController.showAlert(forError: error)
                 self?.viewController.hideLoading()
             }
         }
     }
-    
-    
 }

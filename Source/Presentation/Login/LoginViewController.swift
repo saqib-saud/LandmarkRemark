@@ -2,7 +2,12 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate, LoadingDisplayable, AlertDisplayable {
+protocol LoginPresenter: LoadingDisplayable, AlertDisplayable {
+    var isLoginButtonEnabled: Bool { get set }
+    func showHomeScreen()
+}
+
+class LoginViewController: UIViewController, UITextFieldDelegate, LoginPresenter {
     // MARK: - IBOutlets
     
     @IBOutlet private weak var userNameField: UITextField!
@@ -12,7 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoadingDisplay
     
     // MARK: - Injected Properties
     
-    lazy var viewModel = LoginViewModel(viewController: self)
+    lazy var viewModel: LoginProvider = LoginViewModel(viewController: self)
     var coordinator: AuthenticateCoordinator?
     
     var loadingView: LoadingView?
@@ -40,8 +45,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoadingDisplay
         loginButton.layer.cornerRadius = 5
         loginButton.clipsToBounds = true
         
-        userNameField.text = "demo@landmark.com"
-        passwordField.text = "test123"
+//        userNameField.text = "demo@landmark.com"
+//        passwordField.text = "test123"
     }
     
     // MARK: - Actions
@@ -52,13 +57,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoadingDisplay
         
         showLoading()
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-//            self.hideLoading()
-//        }
         viewModel.authenticateUser(userName: userNameField.text, password: passwordField.text)
     }
     
-    func loginSuccessful() {
+    func showHomeScreen() {
         guard let coordinator = coordinator else {
             return
         }

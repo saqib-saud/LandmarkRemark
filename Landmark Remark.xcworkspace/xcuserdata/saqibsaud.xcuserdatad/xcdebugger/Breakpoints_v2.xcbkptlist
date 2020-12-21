@@ -14,8 +14,8 @@
             filePath = "Source/Presentation/Login/LoginViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "authenticateUser(userName:password:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Source/Presentation/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "mapView(_:annotationView:calloutAccessoryControlTapped:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "Source/Presentation/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "searchBarTextDidEndEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -114,6 +114,99 @@
             endingLineNumber = "42"
             landmarkName = "configureFirebase()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D031B3EF-B15B-41D4-90F0-8D06143A0CA4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/Presentation/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D031B3EF-B15B-41D4-90F0-8D06143A0CA4 - 69fc1db1f0d69950"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Landmark_Remark.LoginViewController.__deallocating_deinit"
+                  moduleName = "Landmark Remark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saqibsaud/Saqib/Assignments/Landmark%20Remark/Source/Presentation/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "D031B3EF-B15B-41D4-90F0-8D06143A0CA4 - b9bda2f4af653264"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Landmark_Remark.LoginViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Landmark_Remark.LoginViewController"
+                  moduleName = "Landmark Remark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saqibsaud/Saqib/Assignments/Landmark%20Remark/Source/Presentation/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "D031B3EF-B15B-41D4-90F0-8D06143A0CA4 - e15345e36f4cf570"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Landmark_Remark.LoginViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Landmark_Remark.LoginViewController"
+                  moduleName = "Landmark Remark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saqibsaud/Saqib/Assignments/Landmark%20Remark/Source/Presentation/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "D031B3EF-B15B-41D4-90F0-8D06143A0CA4 - 8fd1b1367b711e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Landmark_Remark.LoginViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Landmark_Remark.LoginViewController&gt;"
+                  moduleName = "Landmark Remark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saqibsaud/Saqib/Assignments/Landmark%20Remark/Source/Presentation/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "D031B3EF-B15B-41D4-90F0-8D06143A0CA4 - 3acb9ac330a6ffb3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Landmark_Remark.LoginViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Landmark_Remark.LoginViewController&gt;"
+                  moduleName = "Landmark Remark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saqibsaud/Saqib/Assignments/Landmark%20Remark/Source/Presentation/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
