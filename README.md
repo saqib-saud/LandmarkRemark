@@ -1,37 +1,43 @@
-#  ReadMe!
-
-todo: Add null value check on note
 # Requirements
 
 ## Explicit Requirements
+- [x] As a user (of the application) I can see my current location on a map
+- [x] As a user I can save a short note at my current location
+- [x] As a user I can see notes that I have saved at the location they were saved on the map
+- [x] As a user I can see the location, text, and user-name of notes other users have saved
+- [x] As a user I have the ability to search for a note based on contained text or user-name
+
 ## Implicit Requirements
-    - Login
-    - Logout
-    - Error handling and retry on failure
-    
-## Further improvements
-    - Offline Support
-    - Session Management
-    - Annotation Clustering
+Based on requirements listed above following requirements were deduced.
+- [x] A user must be logged in to add remarks
+- [x] A logged in user must be able to logout
+- [x] Show error when something goes wrong
+    - [ ] There should be an option to retry failed network requests.
+- [ ] User session in the app should expire after certain time. 
+- [ ] A user can view remarks while they are offline
+- [ ] When there are many remarks on the same point, the app should create a cluster and show them appropriately. 
     
 # Which Architecture?
 
-When choosing architecture for your application there is no silver bullet. The choice of architecture depends on team expertise and time at hand.
+When choosing architecture for your application there is no silver bullet. The choice of architecture depends on team expertise and time at hand. We will discuss the pros/cons of some popular architectures and I will further explain which architecture I prefer.
 
 ## Model-View-Controller 
 MVC is the default out of the box architecture which Apple gives us. MVC is great when you are building small applications but it has its issues too
 
 ### Pros
 - Fast delivery
+- Adds basic level of abstraction, best suited for small apps.
 ### Cons
-- Not scalable, creates "Massive View Controller" problem
+- Not scalable, creates "Massive View Controller" problem.
+- Impossible to write unit tests.
 
 ## Model-View-ViewModel
 MVVM adds more encapsulation on top of MVC
 
 ### Pros
-- Mediocre complexity
-- Scalable 
+- Mediocre complexity.
+- Scalable.
+- Easier to write unit tests. 
 ### Cons
 - If not careful you can still end up creating Massive View Model.
 
