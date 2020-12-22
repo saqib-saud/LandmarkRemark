@@ -24,7 +24,7 @@
 		C1EF1939258A2ACC00149E4F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1938258A2ACC00149E4F /* AppCoordinator.swift */; };
 		C1EF1950258ADBB200149E4F /* RemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF194F258ADBB200149E4F /* RemarkView.swift */; };
 		C1EF1955258B1F2E00149E4F /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1954258B1F2E00149E4F /* FirestoreClient.swift */; };
-		C1EF19A0258B341600149E4F /* DatastoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF199F258B341600149E4F /* DatastoreService.swift */; };
+		C1EF19A0258B341600149E4F /* DataStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF199F258B341600149E4F /* DataStoreService.swift */; };
 		C1EF19A9258C8AE000149E4F /* AddRemarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19A8258C8AE000149E4F /* AddRemarkViewController.swift */; };
 		C1EF19B1258C8AED00149E4F /* AddRemarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19B0258C8AED00149E4F /* AddRemarkViewModel.swift */; };
 		C1EF19B7258D81F900149E4F /* UIViewController+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19B6258D81F900149E4F /* UIViewController+LoadingView.swift */; };
@@ -90,7 +90,7 @@
 		C1EF1938258A2ACC00149E4F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C1EF194F258ADBB200149E4F /* RemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkView.swift; sourceTree = "<group>"; };
 		C1EF1954258B1F2E00149E4F /* FirestoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
-		C1EF199F258B341600149E4F /* DatastoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatastoreService.swift; sourceTree = "<group>"; };
+		C1EF199F258B341600149E4F /* DataStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreService.swift; sourceTree = "<group>"; };
 		C1EF19A8258C8AE000149E4F /* AddRemarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemarkViewController.swift; sourceTree = "<group>"; };
 		C1EF19B0258C8AED00149E4F /* AddRemarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemarkViewModel.swift; sourceTree = "<group>"; };
 		C1EF19B6258D81F900149E4F /* UIViewController+LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingView.swift"; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 			children = (
 				C1EF19F9258F719500149E4F /* Models */,
 				C1B588F7258A11FA007AB53C /* AuthenticationService.swift */,
-				C1EF199F258B341600149E4F /* DatastoreService.swift */,
+				C1EF199F258B341600149E4F /* DataStoreService.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -240,13 +240,13 @@
 		C1B588EB258A1135007AB53C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				C1EF19BB258D920800149E4F /* Common */,
-				C1EF19B5258D81E400149E4F /* Extensions */,
 				C1B5889B2589CC7A007AB53C /* Main.storyboard */,
 				C1B588EC258A1188007AB53C /* Login */,
 				C1EF192A258A286600149E4F /* Home */,
 				C1EF19A7258C8AB700149E4F /* AddRemark */,
 				C1EF1938258A2ACC00149E4F /* AppCoordinator.swift */,
+				C1EF19BB258D920800149E4F /* Common */,
+				C1EF19B5258D81E400149E4F /* Extensions */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -609,7 +609,7 @@
 				C1B588F8258A11FA007AB53C /* AuthenticationService.swift in Sources */,
 				C1EF1955258B1F2E00149E4F /* FirestoreClient.swift in Sources */,
 				C1EF192C258A288A00149E4F /* HomeViewController.swift in Sources */,
-				C1EF19A0258B341600149E4F /* DatastoreService.swift in Sources */,
+				C1EF19A0258B341600149E4F /* DataStoreService.swift in Sources */,
 				C1EF19A9258C8AE000149E4F /* AddRemarkViewController.swift in Sources */,
 				C1EF1939258A2ACC00149E4F /* AppCoordinator.swift in Sources */,
 				C1EF1920258A1E0100149E4F /* FirebaseClient.swift in Sources */,
