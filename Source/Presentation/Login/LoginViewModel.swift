@@ -9,7 +9,7 @@ protocol LoginProvider {
 
 class LoginViewModel: LoginProvider {
     let authenticationService: AuthenticationUseCase
-    let viewController: LoginPresenter
+    unowned let viewController: LoginPresenter
     
     init(viewController: LoginPresenter, authenticationService: AuthenticationUseCase = AuthenticationService.sharedInstance) {
         self.viewController = viewController

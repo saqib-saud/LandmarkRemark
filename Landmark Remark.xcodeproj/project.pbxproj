@@ -36,6 +36,9 @@
 		C1EF1AB52590A42500149E4F /* AuthenticationServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AB42590A42500149E4F /* AuthenticationServiceSpec.swift */; };
 		C1EF1ABA2590A43700149E4F /* DatastoreServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AB92590A43700149E4F /* DatastoreServiceSpec.swift */; };
 		C1EF1AC32590CE0900149E4F /* LoginViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AC22590CE0900149E4F /* LoginViewModelSpec.swift */; };
+		C1EF1AC92590D58200149E4F /* HomeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AC82590D58200149E4F /* HomeViewModelSpec.swift */; };
+		C1EF1AD2259194C300149E4F /* AddRemarkViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AD1259194C300149E4F /* AddRemarkViewModelSpec.swift */; };
+		C1EF1ADB259196DA00149E4F /* DataStoreServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1ADA259196DA00149E4F /* DataStoreServiceMock.swift */; };
 		DC5CBB437CBCCCC2C6E4BBDF /* Pods_Landmark_Remark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF68AA0B9463D006E4378B2 /* Pods_Landmark_Remark.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +102,9 @@
 		C1EF1AB42590A42500149E4F /* AuthenticationServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceSpec.swift; sourceTree = "<group>"; };
 		C1EF1AB92590A43700149E4F /* DatastoreServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatastoreServiceSpec.swift; sourceTree = "<group>"; };
 		C1EF1AC22590CE0900149E4F /* LoginViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelSpec.swift; sourceTree = "<group>"; };
+		C1EF1AC82590D58200149E4F /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
+		C1EF1AD1259194C300149E4F /* AddRemarkViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemarkViewModelSpec.swift; sourceTree = "<group>"; };
+		C1EF1ADA259196DA00149E4F /* DataStoreServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreServiceMock.swift; sourceTree = "<group>"; };
 		C5B26A8BD245A91A08F31CF0 /* Pods-Landmark Remark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark.debug.xcconfig"; path = "Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +199,7 @@
 		C1B588AB2589CC7B007AB53C /* Landmark RemarkTests */ = {
 			isa = PBXGroup;
 			children = (
+				C1EF1AD9259196BE00149E4F /* Common Mocks */,
 				C1EF1A4B258F7ED000149E4F /* Presentation */,
 				C1EF1A4C258F7EDC00149E4F /* Domain */,
 				C1EF1A4D258F7EE300149E4F /* Data */,
@@ -317,6 +324,7 @@
 			children = (
 				C1EF1ABE2590CA6C00149E4F /* Login */,
 				C1EF1AC72590D40B00149E4F /* Home */,
+				C1EF1AD0259194A000149E4F /* AddRemark */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -350,8 +358,25 @@
 		C1EF1AC72590D40B00149E4F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C1EF1AC82590D58200149E4F /* HomeViewModelSpec.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C1EF1AD0259194A000149E4F /* AddRemark */ = {
+			isa = PBXGroup;
+			children = (
+				C1EF1AD1259194C300149E4F /* AddRemarkViewModelSpec.swift */,
+			);
+			path = AddRemark;
+			sourceTree = "<group>";
+		};
+		C1EF1AD9259196BE00149E4F /* Common Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C1EF1ADA259196DA00149E4F /* DataStoreServiceMock.swift */,
+			);
+			path = "Common Mocks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,7 +624,10 @@
 				C1EF1A52258F80A400149E4F /* FirebaseClientSpec.swift in Sources */,
 				C1EF1AC32590CE0900149E4F /* LoginViewModelSpec.swift in Sources */,
 				C1EF1AB52590A42500149E4F /* AuthenticationServiceSpec.swift in Sources */,
+				C1EF1AD2259194C300149E4F /* AddRemarkViewModelSpec.swift in Sources */,
+				C1EF1AC92590D58200149E4F /* HomeViewModelSpec.swift in Sources */,
 				C1EF1AB0258F98D100149E4F /* FirestoreClientSpec.swift in Sources */,
+				C1EF1ADB259196DA00149E4F /* DataStoreServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

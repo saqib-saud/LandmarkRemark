@@ -134,7 +134,7 @@ class DataStoreServiceSpec: QuickSpec {
 
 // MARK: - Mock
 
-class FirestoreClientMock: FirestoreProvider {
+private class FirestoreClientMock: FirestoreProvider {
     var fetchRemarksCalled = false
     var fetchRemarksResult: (Result<[RemarkPO]?, FirebaseError>)?
     

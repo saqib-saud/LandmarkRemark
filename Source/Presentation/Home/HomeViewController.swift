@@ -5,7 +5,11 @@ import MapKit
 import CoreLocation
 import Contacts
 
-class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate, CLLocationManagerDelegate, AlertDisplayable {
+protocol HomePresenter: AlertDisplayable{
+    func loadRemark(annotations: [Remark])
+}
+
+class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate, CLLocationManagerDelegate, HomePresenter {
     @IBOutlet private weak var mapView: MKMapView!
     private var searchController: UISearchController!
 
@@ -113,7 +117,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
             return
         }
         
-        coordinator?.presentShowRemark(remark.remark)
+        coordinator?.presentShowRemark(remark.note)
     }
     
     // MARK: - Actions

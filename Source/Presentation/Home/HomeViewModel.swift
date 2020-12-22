@@ -8,26 +8,25 @@ protocol HomeViewModelProvider {
 }
 
 class HomeViewModel: HomeViewModelProvider {
-    private let viewController: HomeViewController
+    private unowned let viewController: HomePresenter
     private var dataStoreService: DataStoreUseCase
+    
     private var annotations: [Remark]?
     private var filteredAnnotations: [Remark]?
     
-    init(viewController: HomeViewController, dataStoreService: DataStoreUseCase = DataStoreService.sharedInstance) {
+    init(viewController: HomePresenter, dataStoreService: DataStoreUseCase = DataStoreService.sharedInstance) {
         self.viewController = viewController
         self.dataStoreService = dataStoreService
     }
     
     func viewWillAppear() {
-        fetchRemarks { result in
-            
-        }
+        fetchRemarks()
     }
     
     func searchBarDidSearch(text: String) {
         if text.count > 0 {
             let lowerCasedInput = text.lowercased()
-            filteredAnnotations = annotations?.filter({ $0.userName.lowercased().contains(lowerCasedInput) || $0.remark?.lowercased().contains(lowerCasedInput) ?? false
+            filteredAnnotations = annotations?.filter({ $0.userName.lowercased().contains(lowerCasedInput) || $0.note?.lowercased().contains(lowerCasedInput) ?? false
             })
         } else {
             filteredAnnotations = annotations
@@ -40,7 +39,7 @@ class HomeViewModel: HomeViewModelProvider {
         dataStoreService.remark.coordinate = RemarkPO.Coordinate(latitude: latitude, longitude: longitude)
     }
     
-    private func fetchRemarks(completion: @escaping ((Result<[RemarkPO], FirebaseError>) -> Void)) {
+    private func fetchRemarks() {
         dataStoreService.fetchRemarks { [weak self] result in
             switch result {
             case let .success(remarks):

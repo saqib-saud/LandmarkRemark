@@ -7,17 +7,20 @@ protocol AddRemarkViewModelProvider {
 }
 
 class AddRemarkViewModel: AddRemarkViewModelProvider {
-    private let viewController: AddRemarkViewController
+    private unowned let viewController: AddRemarkPresenter
     private var dataStoreService: DataStoreUseCase
     
-    init(viewController: AddRemarkViewController, dataStoreService: DataStoreUseCase = DataStoreService.sharedInstance) {
+    init(viewController: AddRemarkPresenter, dataStoreService: DataStoreUseCase = DataStoreService.sharedInstance) {
         self.viewController = viewController
         self.dataStoreService = dataStoreService
     }
     
     func addRemark(text: String?) {
         dataStoreService.remark.note = text
+        viewController.showLoading()
+
         dataStoreService.addRemark { [weak self] result in
+            self?.viewController.hideLoading()
             switch result {
             case .success:
                 self?.viewController.dismiss()

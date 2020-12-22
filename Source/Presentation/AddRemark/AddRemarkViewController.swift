@@ -2,13 +2,19 @@
 
 import UIKit
 
-class AddRemarkViewController: UIViewController, AlertDisplayable {
+protocol AddRemarkPresenter: AlertDisplayable, LoadingDisplayable {
+    func dismiss()
+}
+
+class AddRemarkViewController: UIViewController, AddRemarkPresenter {
     // MARK: - Properties
     
     @IBOutlet weak var remarkTextView: UITextView!
     
     lazy var viewModel = AddRemarkViewModel(viewController: self)
     var coordinator: AddRemarkCoordinator?
+
+    var loadingView: LoadingView?
 
     var remark: String?
     

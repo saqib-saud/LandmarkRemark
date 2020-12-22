@@ -101,7 +101,7 @@ class LoginViewModelSpec: QuickSpec {
 
 // MARK: - Mocks
 
-class AuthenticationServiceMock: AuthenticationUseCase {
+private class AuthenticationServiceMock: AuthenticationUseCase {
     var authenticateUserCalled = false
     var authenticateUserResult: (Result<Void, AuthenticationError>)?
     
@@ -120,7 +120,7 @@ class AuthenticationServiceMock: AuthenticationUseCase {
     
 }
 
-class LoginPresenterMock: LoginPresenter {
+private class LoginPresenterMock: LoginPresenter {
     var showHomeScreenCalled = false
     var showLoadingCalled = false
     var hideLoadingCalled = false

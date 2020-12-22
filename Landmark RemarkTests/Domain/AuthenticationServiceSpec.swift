@@ -72,7 +72,7 @@ class AuthenticationServiceSpec: QuickSpec {
 
 // MARK: - Mocks
 
-class FirebaseClientMock: FirebaseProvider {
+private class FirebaseClientMock: FirebaseProvider {
     var authenticateCalled = false
     var authenticationError: FirebaseError?
     
