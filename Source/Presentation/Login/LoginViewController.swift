@@ -45,8 +45,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginPresenter
         loginButton.layer.cornerRadius = 5
         loginButton.clipsToBounds = true
         
-//        userNameField.text = "demo@landmark.com"
-//        passwordField.text = "test123"
+        userNameField.text = "demo@landmark.com"
+        passwordField.text = "test123"
     }
     
     // MARK: - Actions

@@ -6,7 +6,7 @@ protocol AddRemarkPresenter: AlertDisplayable, LoadingDisplayable {
     func dismiss()
 }
 
-class AddRemarkViewController: UIViewController, AddRemarkPresenter {
+class AddRemarkViewController: UIViewController, AddRemarkPresenter, UITextViewDelegate {
     // MARK: - Properties
     
     @IBOutlet weak var remarkTextView: UITextView!
@@ -23,7 +23,9 @@ class AddRemarkViewController: UIViewController, AddRemarkPresenter {
         
         remarkTextView.layer.cornerRadius = 5
         remarkTextView.clipsToBounds = true
-    
+        remarkTextView.delegate = self
+        remarkTextView.becomeFirstResponder()
+        
         if remark != nil {
             remarkTextView.text = remark
             remarkTextView.isEditable = false
@@ -31,6 +33,7 @@ class AddRemarkViewController: UIViewController, AddRemarkPresenter {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                                target: self,
                                                                action: #selector(didTapAdd))
+            navigationItem.rightBarButtonItem?.isEnabled = false
         }
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
@@ -50,5 +53,14 @@ class AddRemarkViewController: UIViewController, AddRemarkPresenter {
     
     @objc func didTapAdd() {
         viewModel.addRemark(text: remarkTextView.text)
+    }
+    
+    // MARK: - TextView Delegate
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.count > 0 {
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        }
     }
 }

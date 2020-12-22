@@ -32,7 +32,7 @@
 		C1EF19C8258E08C700149E4F /* UIViewController+AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19C7258E08C700149E4F /* UIViewController+AlertDisplayable.swift */; };
 		C1EF19FB258F71C100149E4F /* RemarkPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19FA258F71C100149E4F /* RemarkPO.swift */; };
 		C1EF1A52258F80A400149E4F /* FirebaseClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1A51258F80A400149E4F /* FirebaseClientSpec.swift */; };
-		C1EF1AB0258F98D100149E4F /* FirestoreClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AAF258F98D100149E4F /* FirestoreClientSpec.swift */; };
+		C1EF1AB0258F98D100149E4F /* FireStoreClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AAF258F98D100149E4F /* FireStoreClientSpec.swift */; };
 		C1EF1AB52590A42500149E4F /* AuthenticationServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AB42590A42500149E4F /* AuthenticationServiceSpec.swift */; };
 		C1EF1ABA2590A43700149E4F /* DatastoreServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AB92590A43700149E4F /* DatastoreServiceSpec.swift */; };
 		C1EF1AC32590CE0900149E4F /* LoginViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1AC22590CE0900149E4F /* LoginViewModelSpec.swift */; };
@@ -98,7 +98,7 @@
 		C1EF19C7258E08C700149E4F /* UIViewController+AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertDisplayable.swift"; sourceTree = "<group>"; };
 		C1EF19FA258F71C100149E4F /* RemarkPO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkPO.swift; sourceTree = "<group>"; };
 		C1EF1A51258F80A400149E4F /* FirebaseClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClientSpec.swift; sourceTree = "<group>"; };
-		C1EF1AAF258F98D100149E4F /* FirestoreClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreClientSpec.swift; sourceTree = "<group>"; };
+		C1EF1AAF258F98D100149E4F /* FireStoreClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreClientSpec.swift; sourceTree = "<group>"; };
 		C1EF1AB42590A42500149E4F /* AuthenticationServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceSpec.swift; sourceTree = "<group>"; };
 		C1EF1AB92590A43700149E4F /* DatastoreServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatastoreServiceSpec.swift; sourceTree = "<group>"; };
 		C1EF1AC22590CE0900149E4F /* LoginViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelSpec.swift; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				C1EF1A51258F80A400149E4F /* FirebaseClientSpec.swift */,
-				C1EF1AAF258F98D100149E4F /* FirestoreClientSpec.swift */,
+				C1EF1AAF258F98D100149E4F /* FireStoreClientSpec.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -626,7 +626,7 @@
 				C1EF1AB52590A42500149E4F /* AuthenticationServiceSpec.swift in Sources */,
 				C1EF1AD2259194C300149E4F /* AddRemarkViewModelSpec.swift in Sources */,
 				C1EF1AC92590D58200149E4F /* HomeViewModelSpec.swift in Sources */,
-				C1EF1AB0258F98D100149E4F /* FirestoreClientSpec.swift in Sources */,
+				C1EF1AB0258F98D100149E4F /* FireStoreClientSpec.swift in Sources */,
 				C1EF1ADB259196DA00149E4F /* DataStoreServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

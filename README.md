@@ -11,10 +11,14 @@
 Based on requirements listed above following requirements were deduced.
 - [x] Prompt user to share location
 - [x] A user must be logged in to add remarks
+- [x] Username and Password validation 
 - [x] A logged in user must be able to logout
+- [x] Case insensitive search
+- [x] Custom Loading indicator when making asynchronous requests. 
 - [x] Show error when something goes wrong
+    - [ ] Errors should be descriptive 
     - [ ] There should be an option to retry failed network requests.
-- [ ] Handle scenario if location access is not granted by user.
+- [ ] Handle scenario if location access is not granted by user. Disable `Add` Remark button if location sharing is disabled
 - [ ] User session in the app should expire after certain time. 
 - [ ] A user can view remarks while they are offline
 - [ ] When there are many remarks on the same point, the app should create a cluster and show them appropriately. 
@@ -98,11 +102,13 @@ Each layer encapsualtes its errors and only exposes subset of errors to consumer
 ### Behaviour Driven Unit Testing 
 BDD techniques are used for unit testing. Had limited success covering 3rd party libraries such and Firebase and FireStore. Some Firebase classes have private constructors, which becomes problematic while mocking it.
 
-We can test 3rd part libraries by declaring protocol and then extending it. 
-
-Unit test coverage: 37.7% (It also includes view controllers)
+**Unit test coverage: 37.7% ** (It also includes view controllers)
 
 The ViewControllers are dumb and thus not being Unit Tested. 
+
+### BDD 3rd Party Libraries
+To complete end-to-end unit testing, we need to mock 3rd party libraries. Often its not an easy task because It not necessary that 3rd party library might implement a protocol. We tested Firebase Authentication by declaring a protocol and then implementing it using an extension.  However this approach did not work very well for FireStore testing because of some API restrictions. Some of the constructors in Firebase were private for public, thus we could not create instances of them.
+
 ```
 protocol FIRAuthProvider {
     func signIn(withEmail email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)

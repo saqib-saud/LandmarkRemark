@@ -60,10 +60,23 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
 
             viewModel.didUpdateLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         }
+        
+        navigationItem.rightBarButtonItem?.isEnabled = true
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        showAlert(forError: error)
+        let alertController = UIAlertController(title: "Location sharing disabled", message: "Please enable location sharing in Settings to continue using app.", preferredStyle: .alert)
+
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+        let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+        }
+
+        alertController.addAction(cancelAction)
+        alertController.addAction(settingsAction)
+        self.present(alertController, animated: true, completion: nil)
+        
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     func loadRemark(annotations: [Remark]) {
