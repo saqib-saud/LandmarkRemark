@@ -9,6 +9,7 @@
 
 ## Implicit Requirements
 Based on requirements listed above following requirements were deduced.
+- [x] Prompt user to share location
 - [x] A user must be logged in to add remarks
 - [x] A logged in user must be able to logout
 - [x] Show error when something goes wrong
@@ -16,6 +17,8 @@ Based on requirements listed above following requirements were deduced.
 - [ ] User session in the app should expire after certain time. 
 - [ ] A user can view remarks while they are offline
 - [ ] When there are many remarks on the same point, the app should create a cluster and show them appropriately. 
+- [ ] When Location sharing is disabled show appropriate prompt to user. 
+- [ ] Linting and Swift Formatting 
     
 # Which Architecture?
 
@@ -42,49 +45,65 @@ MVVM adds more encapsulation on top of MVC
 - If not careful you can still end up creating Massive View Model.
 
 ### Clean Architecture/ VIPER
-Clean Architecture idea was presented by Uncle Bob. It strictly follows single responsibility and uses boundary objects to pass data between different layers. While this idea is great for enterprise app it does not work well with small mobile teams because of extra layers.
+Clean Architecture idea was presented by Uncle Bob. It strictly follows single responsibility and uses boundary objects to pass data between different layers. While this idea is great for enterprise app it does not work well with small mobile teams because of extra layers. In my experience mobile apps should be thin clients and major processing should be done on server side.
+
+you can read more about it [here](https://www.objc.io/issues/13-architecture/viper/)
 
 ### Pros
 - Well defined boundaries, plug-n-play architecture
 - Scalable
+- Easier to write tests.
 
 ### Cons
-- Small teams might see significant delays in delivery 
+- Small teams might see significant delays in delivery because of overhead of extra layers.
 
 ## My Choice
-I prefer using MVVM for its mediocre complexity and quick delivery times. I like the ideas presented by Uncle Bob and like to use them along with MVVM
+I prefer to apply Clean Architecture ideas to MVVM. I've used SOLID design principals to make app testable (further reading)[https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html]  
 
-- Screaming Architecture. Without looking into the code, the folder structure should give you an idea about the app architecture.
-- SOLID design principals.
-- Using boundary objects to pass data between Data layer and Domain layer. Which keeps both layers decoupled and easily replaceable. For instance If we want to move away from Firebase to any new BaaS it should not impact our Domain or View Layer. This change should be isolated to Data layer.
+### Screaming Architecture
+<img width="277" alt="folder structure" src="https://user-images.githubusercontent.com/400207/102848193-5186ac00-4468-11eb-8d64-f07631752b2c.png">
 
+You dont have dive deep into the code to understand the architecture of the app. The folder structure gives you enough hints to understand the architecture. [futher reading](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
+
+![layer diagram](https://user-images.githubusercontent.com/400207/102849601-97913f00-446b-11eb-823b-3c1ce535a861.png)
+
+#### Presentation Layer
+Presentation layer contain UIKit, Mapkit and Location manager references. It is tighyly coupled with UIKit. All the iOS native frameworks are present in this later
+
+#### Domain Layer
+The domain layer is meant to be Abstract, General purpose and platform independent. It does not contain any reference to firebase or UIKit. If we decide to replace presentation layer (i.e. Replace UIKit with SwiftUI) it wont have any impact of Domain later. 
+
+We use boundary objects to pass data between layers. Which keeps them decoupled and easily replaceable. For instance If we want to move away from Firebase to any new BaaS it should not impact our Domain or View Layer. This change should be isolated to Data layer.
+
+#### Data Layer
+The data layer contain Firebase and FireStore references. It is tightly coupled with 3rd party libraries.
+
+## Features
+### Protocol Oriented Programming
+Alerts and Loading screen in app are being displayed using POP. We can use protocol to test BDD for 3rd party libraries. 
+
+### Functional Programming 
+Used `map` function where appropriate to transform data. Avoid RxSwift to keep app simple. 
 
 ## Error handling
-Not expose data layer errors to  Presentation layer
+Each layer encapsualtes its errors and only exposes subset of errors to consumer layer. For the end user there are only 2 types of errors:
+- Failed Errors (i.e. No internet error)
+- Retryable Errors (i.e. Bad internet connection) 
 
+## Behaviour Driven Unit Testing 
+BDD techniques are used for unit testing. Had limited success covering 3rd party libraries such and Firebase and FireStore. Some Firebase classes have private constructors, which becomes problematic while mocking it.
+
+We can test 3rd part libraries by declaring protocol and then extending it. 
+
+Unit test coverage: 37.7% (It also includes view controllers)
+
+The ViewControllers are dumb and thus not being Unit Tested. 
+```
+protocol FIRAuthProvider {
+    func signIn(withEmail email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
+}
+
+extension Auth: FIRAuthProvider {}
+```
 ## Bonus
-- Use Header https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev91a7a31fc
-
-add app flow diagram that shows flow in case of 
- - network error
- - location error
-
-
-## Testing
-
-Our view controllers are dumb, thus we can skip testing them. ViewControllers pass every action to the ViewModel and ViewModel decides what action it should take.
-
- - Why single storyboard used.
- - functional programming (using maps and other functions)
- - Wrapper around libraries 
- - Linting and Swift Formatting 
- - Annotation Clustering 
-- The ViewController should also inherit from Protocol
-- POP - Showing Activity Indicator
-            - alerts (retry)
-            
-Unit Testing External Library
- - explain why skipping call was necessary
-  - testing firebase is difficult because of private initialisers 
-
-            
+- Using single line file header (further reading)[https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev91a7a31fc]
