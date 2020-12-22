@@ -14,6 +14,7 @@ Based on requirements listed above following requirements were deduced.
 - [x] A logged in user must be able to logout
 - [x] Show error when something goes wrong
     - [ ] There should be an option to retry failed network requests.
+- [ ] Handle scenario if location access is not granted by user.
 - [ ] User session in the app should expire after certain time. 
 - [ ] A user can view remarks while they are offline
 - [ ] When there are many remarks on the same point, the app should create a cluster and show them appropriately. 
@@ -35,7 +36,7 @@ MVC is the default out of the box architecture which Apple gives us. MVC is grea
 - Impossible to write unit tests.
 
 ## Model-View-ViewModel
-MVVM adds more encapsulation on top of MVC
+MVVM adds more encapsulation on top of MVC. Each View has a dedicated ViewModel that handles all the updates to View. View and View Model can be binded using reactive frameworks such as RxSwift. The View does not contain any logic, thus we avoid testing it.
 
 ### Pros
 - Mediocre complexity.
@@ -58,7 +59,7 @@ you can read more about it [here](https://www.objc.io/issues/13-architecture/vip
 - Small teams might see significant delays in delivery because of overhead of extra layers.
 
 ## My Choice
-I prefer to apply Clean Architecture ideas to MVVM. I've used SOLID design principals to make app testable (further reading)[https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html]  
+I prefer to apply Clean Architecture ideas to MVVM. I've used SOLID design principals to make app testable [further reading](https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html)
 
 ### Screaming Architecture
 <img width="277" alt="folder structure" src="https://user-images.githubusercontent.com/400207/102848193-5186ac00-4468-11eb-8d64-f07631752b2c.png">
@@ -83,14 +84,18 @@ The data layer contain Firebase and FireStore references. It is tightly coupled 
 Alerts and Loading screen in app are being displayed using POP. We can use protocol to test BDD for 3rd party libraries. 
 
 ### Functional Programming 
-Used `map` function where appropriate to transform data. Avoid RxSwift to keep app simple. 
+Used `map` function where appropriate to transform data. Avoided RxSwift to keep app simple. 
 
-## Error handling
+### Custom UI
+
+Created UI using Interface Builder and programmatically (e.g. `LoadingView`). `LoadingView` Can be further improved using IBDesignable to customise in Interface Builder.
+
+### Error handling
 Each layer encapsualtes its errors and only exposes subset of errors to consumer layer. For the end user there are only 2 types of errors:
 - Failed Errors (i.e. No internet error)
 - Retryable Errors (i.e. Bad internet connection) 
 
-## Behaviour Driven Unit Testing 
+### Behaviour Driven Unit Testing 
 BDD techniques are used for unit testing. Had limited success covering 3rd party libraries such and Firebase and FireStore. Some Firebase classes have private constructors, which becomes problematic while mocking it.
 
 We can test 3rd part libraries by declaring protocol and then extending it. 
@@ -106,4 +111,4 @@ protocol FIRAuthProvider {
 extension Auth: FIRAuthProvider {}
 ```
 ## Bonus
-- Using single line file header (further reading)[https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev91a7a31fc]
+- Using single line file header [further reading](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev91a7a31fc)
