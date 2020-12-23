@@ -95,9 +95,9 @@ Used `map` function where appropriate to transform data. Avoided RxSwift to keep
 Created UI using Interface Builder and programmatically (e.g. `LoadingView`). `LoadingView` Can be further improved using IBDesignable to customise in Interface Builder.
 
 ### Error handling
-Each layer encapsualtes its errors and only exposes subset of errors to consumer layer. For the end user there are only 2 types of errors:
+Each layer encapsulates its errors and only exposes subset of errors to consumer layer. For the end user there are only 2 types of errors:
 - Failed Errors (i.e. No internet error)
-- Retryable Errors (i.e. Bad internet connection) 
+- Retry-able Errors (i.e. Bad internet connection) 
 
 ### Behaviour Driven Unit Testing 
 BDD techniques are used for unit testing. Had limited success covering 3rd party libraries such and Firebase and FireStore. Some Firebase classes have private constructors, which becomes problematic while mocking it.

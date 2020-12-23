@@ -5,11 +5,12 @@ import MapKit
 import CoreLocation
 import Contacts
 
-protocol HomePresenter: AlertDisplayable{
+protocol HomePresenter: AlertDisplayable {
     func loadRemark(annotations: [Remark])
 }
 
-class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate, CLLocationManagerDelegate, HomePresenter {
+class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate,
+                          CLLocationManagerDelegate, HomePresenter {
     @IBOutlet private weak var mapView: MKMapView!
     private var searchController: UISearchController!
 
@@ -19,15 +20,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
         locationManager.delegate = self
         return locationManager
     }()
-    
+
     // MARK: - Injected Properties
-    
+
     lazy var viewModel = HomeViewModel(viewController: self)
     var coordinator: HomeCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+
         locationManager.startUpdatingLocation()
         searchController = UISearchController()
         searchController.searchBar.delegate = self
@@ -39,65 +40,74 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(didTapLogout))
-        
+
         mapView.delegate = self
         mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "RemarkAnnotation")
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         viewModel.viewWillAppear()
     }
-    
+
     // MARK: - LocationManager Delegate
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
+                                                longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center,
+                                            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             mapView.setRegion(region, animated: true)
 
-            viewModel.didUpdateLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            viewModel.didUpdateLocation(latitude: location.coordinate.latitude,
+                                        longitude: location.coordinate.longitude)
         }
-        
+
         navigationItem.rightBarButtonItem?.isEnabled = true
     }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        let alertController = UIAlertController(title: "Location sharing disabled", message: "Please enable location sharing in Settings to continue using app.", preferredStyle: .alert)
 
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
-        let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        let message = "Please enable location sharing in Settings to continue using app."
+        let alertController = UIAlertController(title: "Location sharing disabled",
+                                                message: message,
+                                                preferredStyle: .alert)
+
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""),
+                                         style: .cancel,
+                                         handler: nil)
+        let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""),
+                                           style: .default) { _ in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
         }
 
         alertController.addAction(cancelAction)
         alertController.addAction(settingsAction)
         self.present(alertController, animated: true, completion: nil)
-        
+
         navigationItem.rightBarButtonItem?.isEnabled = false
     }
-    
+
     func loadRemark(annotations: [Remark]) {
         DispatchQueue.main.async {
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.mapView.addAnnotations(annotations)
         }
     }
-    
+
     // MARK: - SearchBar Delegate
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchBarDidSearch(text: searchText)
     }
-    
+
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         viewModel.searchBarDidSearch(text: "")
     }
-    
+
     // MARK: - MapView Delegate
-    
+
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is Remark else { return nil }
 
@@ -107,11 +117,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
         if annotationView == nil {
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView!.canShowCallout = true
-            
         } else {
             annotationView!.annotation = annotation
         }
-        
+
         if let markerAnnotationView = annotationView as? MKMarkerAnnotationView {
             markerAnnotationView.animatesWhenAdded = true
             markerAnnotationView.canShowCallout = true
@@ -122,23 +131,23 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
 
         return annotationView
     }
-    
+
     func mapView(_ mapView: MKMapView,
                  annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
         guard let remark = view.annotation as? Remark else {
             return
         }
-        
+
         coordinator?.presentShowRemark(remark.note)
     }
-    
+
     // MARK: - Actions
-    
+
     @objc func didTapAddRemark() {
         coordinator?.presentAddRemark()
     }
-    
+
     @objc func didTapLogout() {
         coordinator?.logout()
     }

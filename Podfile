@@ -6,6 +6,7 @@ target 'Landmark Remark' do
 
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'SwiftLint'
   
   target 'Landmark RemarkTests' do
     inherit! :search_paths

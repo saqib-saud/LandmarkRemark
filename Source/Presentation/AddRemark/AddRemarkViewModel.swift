@@ -9,12 +9,12 @@ protocol AddRemarkViewModelProvider {
 class AddRemarkViewModel: AddRemarkViewModelProvider {
     private unowned let viewController: AddRemarkPresenter
     private var dataStoreService: DataStoreUseCase
-    
+
     init(viewController: AddRemarkPresenter, dataStoreService: DataStoreUseCase = DataStoreService.sharedInstance) {
         self.viewController = viewController
         self.dataStoreService = dataStoreService
     }
-    
+
     func addRemark(text: String?) {
         dataStoreService.remark.note = text
         viewController.showLoading()

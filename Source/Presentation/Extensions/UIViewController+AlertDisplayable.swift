@@ -8,10 +8,12 @@ protocol AlertDisplayable: class {
 
 extension AlertDisplayable where Self: UIViewController {
     func showAlert(forError error: Error) {
-        let alert = UIAlertController(title: "An error occurred", message: error.localizedDescription, preferredStyle: .alert)
+        let alert = UIAlertController(title: "An error occurred",
+                                      message: error.localizedDescription,
+                                      preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alert.addAction(alertAction)
-        
+
         present(alert, animated: true)
     }
 }
