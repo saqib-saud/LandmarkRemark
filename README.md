@@ -16,14 +16,14 @@ Based on requirements listed above following requirements were deduced.
 - [x] Case insensitive search
 - [x] Custom Loading indicator when making asynchronous requests. 
 - [x] Show error when something goes wrong
-    - [ ] Errors should be descriptive 
+    - [x] Errors should be descriptive 
     - [ ] There should be an option to retry failed network requests.
 - [ ] Handle scenario if location access is not granted by user. Disable `Add` Remark button if location sharing is disabled
 - [ ] User session in the app should expire after certain time. 
 - [ ] A user can view remarks while they are offline
 - [ ] When there are many remarks on the same point, the app should create a cluster and show them appropriately. 
-- [ ] When Location sharing is disabled show appropriate prompt to user. 
-- [ ] Linting and Swift Formatting 
+- [x] When Location sharing is disabled show appropriate prompt to user. 
+- [x] Linting and Swift Formatting 
     
 # Which Architecture?
 
@@ -40,7 +40,7 @@ MVC is the default out of the box architecture which Apple gives us. MVC is grea
 - Impossible to write unit tests.
 
 ## Model-View-ViewModel
-MVVM adds more encapsulation on top of MVC. Each View has a dedicated ViewModel that handles all the updates to View. View and View Model can be binded using reactive frameworks such as RxSwift. The View does not contain any logic, thus we avoid testing it.
+MVVM adds more encapsulation on top of MVC. Each View has a dedicated ViewModel that handles all the updates to View. View and View Model can be binded using reactive frameworks such as RxSwift but I choose to use protocols. The View does not contain any logic, thus we avoid testing it.
 
 ### Pros
 - Mediocre complexity.
@@ -65,15 +65,17 @@ you can read more about it [here](https://www.objc.io/issues/13-architecture/vip
 ## My Choice
 I prefer to apply Clean Architecture ideas to MVVM. I've used SOLID design principals to make app testable [further reading](https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html)
 
+Utmost care has been taken that each layer follows Law of Demeter. Without this law we might end up accidentally coupling layers.
+
 ### Screaming Architecture
 <img width="277" alt="folder structure" src="https://user-images.githubusercontent.com/400207/102848193-5186ac00-4468-11eb-8d64-f07631752b2c.png">
 
-You dont have dive deep into the code to understand the architecture of the app. The folder structure gives you enough hints to understand the architecture. [futher reading](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
+You don't have dive deep into the code to understand the architecture of the app. The folder structure gives you enough hints to understand the architecture. [further reading](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
 
 ![layer diagram](https://user-images.githubusercontent.com/400207/102849601-97913f00-446b-11eb-823b-3c1ce535a861.png)
 
 #### Presentation Layer
-Presentation layer contain UIKit, Mapkit and Location manager references. It is tighyly coupled with UIKit. All the iOS native frameworks are present in this later
+Presentation layer contain UIKit, MapKit and Location manager references. It is tightly coupled with UIKit. All the iOS native frameworks are present in this later
 
 #### Domain Layer
 The domain layer is meant to be Abstract, General purpose and platform independent. It does not contain any reference to firebase or UIKit. If we decide to replace presentation layer (i.e. Replace UIKit with SwiftUI) it wont have any impact of Domain later. 
@@ -122,5 +124,6 @@ protocol FIRAuthProvider {
 
 extension Auth: FIRAuthProvider {}
 ```
+
 ## Bonus
 - Using single line file header [further reading](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev91a7a31fc)
