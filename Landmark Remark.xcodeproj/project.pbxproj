@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		916F5F077B31F12140A22EBC /* Pods_Landmark_RemarkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2187C88867532D7C7A5A89DF /* Pods_Landmark_RemarkTests.framework */; };
+		C1441BC425934EFD005557A3 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1441BC325934EFD005557A3 /* UIStoryboard+Extensions.swift */; };
 		C1B588962589CC7A007AB53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588952589CC7A007AB53C /* AppDelegate.swift */; };
 		C1B588982589CC7A007AB53C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588972589CC7A007AB53C /* SceneDelegate.swift */; };
 		C1B5889D2589CC7A007AB53C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B5889B2589CC7A007AB53C /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		80DC136F3F62615AA5A60BCB /* Pods-Landmark RemarkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark RemarkTests.debug.xcconfig"; path = "Target Support Files/Pods-Landmark RemarkTests/Pods-Landmark RemarkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83029FE409979682D468FAB6 /* Pods-Landmark Remark.xctest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark.xctest.xcconfig"; path = "Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark.xctest.xcconfig"; sourceTree = "<group>"; };
 		A52ADD7165F411CFAF2CE495 /* Pods-Landmark RemarkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark RemarkTests.release.xcconfig"; path = "Target Support Files/Pods-Landmark RemarkTests/Pods-Landmark RemarkTests.release.xcconfig"; sourceTree = "<group>"; };
+		C1441BC325934EFD005557A3 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		C1B588922589CC7A007AB53C /* Landmark Remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark Remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B588952589CC7A007AB53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B588972589CC7A007AB53C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				C1EF19C7258E08C700149E4F /* UIViewController+AlertDisplayable.swift */,
+				C1441BC325934EFD005557A3 /* UIStoryboard+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				C1B5888F2589CC7A007AB53C /* Frameworks */,
 				C1B588902589CC7A007AB53C /* Resources */,
 				B60DB8E55E414DDE94907E13 /* [CP] Embed Pods Frameworks */,
+				C1441BAA25934A56005557A3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -588,6 +592,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C1441BAA25934A56005557A3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -612,6 +633,7 @@
 				C1EF19A0258B341600149E4F /* DataStoreService.swift in Sources */,
 				C1EF19A9258C8AE000149E4F /* AddRemarkViewController.swift in Sources */,
 				C1EF1939258A2ACC00149E4F /* AppCoordinator.swift in Sources */,
+				C1441BC425934EFD005557A3 /* UIStoryboard+Extensions.swift in Sources */,
 				C1EF1920258A1E0100149E4F /* FirebaseClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
