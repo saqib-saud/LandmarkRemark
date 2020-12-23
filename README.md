@@ -90,6 +90,12 @@ Alerts and Loading screen in app are being displayed using POP. We can use proto
 ### Functional Programming 
 Used `map` function where appropriate to transform data. Avoided RxSwift to keep app simple. 
 
+### Generics 
+Using Generics to instantiate UIViewControllers from storyboards.
+
+```
+func instantiateViewController<T: UIViewController>() -> T
+```
 ### Custom UI
 
 Created UI using Interface Builder and programmatically (e.g. `LoadingView`). `LoadingView` Can be further improved using IBDesignable to customise in Interface Builder.
@@ -102,11 +108,11 @@ Each layer encapsulates its errors and only exposes subset of errors to consumer
 ### Behaviour Driven Unit Testing 
 BDD techniques are used for unit testing. Had limited success covering 3rd party libraries such and Firebase and FireStore. Some Firebase classes have private constructors, which becomes problematic while mocking it.
 
-**Unit test coverage: 37.7% ** (It also includes view controllers)
+**Unit test coverage: 39.6%** (It also includes view controllers)
 
 The ViewControllers are dumb and thus not being Unit Tested. 
 
-### BDD 3rd Party Libraries
+#### BDD 3rd Party Libraries
 To complete end-to-end unit testing, we need to mock 3rd party libraries. Often its not an easy task because It not necessary that 3rd party library might implement a protocol. We tested Firebase Authentication by declaring a protocol and then implementing it using an extension.  However this approach did not work very well for FireStore testing because of some API restrictions. Some of the constructors in Firebase were private for public, thus we could not create instances of them.
 
 ```
