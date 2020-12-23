@@ -47,7 +47,7 @@ class DataStoreServiceSpec: QuickSpec {
                     waitUntil { done in
                         dataStoreService.fetchRemarks { result in
                             expect({ () -> ToSucceedResult in
-                                guard case let .failure(error) = result, case .somethingWentWrong(message: "An error") = error else {
+                                guard case let .failure(error) = result, case .somethingElseWentWrong(message: "An error") = error else {
                                     return .failed(reason: "Invalid state returned")
                                 }
                                 
@@ -86,7 +86,7 @@ class DataStoreServiceSpec: QuickSpec {
                     waitUntil { done in
                         dataStoreService.addRemark { result in
                             expect({ () -> ToSucceedResult in
-                                guard case let .failure(error) = result, case .somethingWentWrong(message: "No remark found") = error else {
+                                guard case let .failure(error) = result, case .somethingElseWentWrong(message: "No remark found") = error else {
                                     return .failed(reason: "Invalid state returned")
                                 }
                                 
@@ -114,7 +114,7 @@ class DataStoreServiceSpec: QuickSpec {
                     waitUntil { done in
                         dataStoreService.addRemark { result in
                             expect({ () -> ToSucceedResult in
-                                guard case let .failure(error) = result, case .invalidEmail = error else {
+                                guard case let .failure(error) = result, case .invalidCredentials = error else {
                                     return .failed(reason: "Invalid state returned")
                                 }
                                 

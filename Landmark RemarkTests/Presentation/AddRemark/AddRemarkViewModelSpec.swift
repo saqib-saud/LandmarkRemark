@@ -41,7 +41,7 @@ class AddRemarkViewModelSpec: QuickSpec {
             
             context("When request is unsuccessful") {
                 it("should show error and not dismiss the presenter") {
-                    dataStoreServiceMock.addRemarkResult = .failure(.userDisabled)
+                    dataStoreServiceMock.addRemarkResult = .failure(.noInternet)
                     dataStoreServiceMock.remark.coordinate = RemarkPO.Coordinate(latitude: 0.0, longitude: 0.0)
                     
                     expect(addRemarkPresenterMock.dismissCalled) == false
@@ -75,7 +75,7 @@ class AddRemarkPresenterMock: AddRemarkPresenter {
         dismissCalled = true
     }
     
-    func showAlert(forError error: Error) {
+    func showAlert(forError error: ServiceError) {
         showAlertCalled = true
     }
     

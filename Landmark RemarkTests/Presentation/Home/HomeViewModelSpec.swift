@@ -44,7 +44,7 @@ class HomeViewModelSpec: QuickSpec {
             
             context("When View appears and the fetch remarks request is unsuccessful") {
                 it("can fetch remarks and update the view controller.") {
-                    dataStoreServiceMock.fetchRemarksResult = .failure(.userDisabled)
+                    dataStoreServiceMock.fetchRemarksResult = .failure(.noInternet)
                     
                     expect(dataStoreServiceMock.fetchRemarksCalled) == false
                     expect(homePresenterMock.showAlertCalled) == false
@@ -135,7 +135,7 @@ private class HomePresenterMock: HomePresenter {
         loadRemarkAnnotations = annotations
     }
     
-    func showAlert(forError error: Error) {
+    func showAlert(forError error: ServiceError) {
         showAlertCalled = true
     }
 }

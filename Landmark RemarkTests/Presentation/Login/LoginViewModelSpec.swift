@@ -103,11 +103,11 @@ class LoginViewModelSpec: QuickSpec {
 
 private class AuthenticationServiceMock: AuthenticationUseCase {
     var authenticateUserCalled = false
-    var authenticateUserResult: (Result<Void, AuthenticationError>)?
+    var authenticateUserResult: (Result<Void, ServiceError>)?
     
     func authenticateUser(userName: String,
                           password: String,
-                          completion: @escaping ((Result<Void, AuthenticationError>) -> Void)) {
+                          completion: @escaping ((Result<Void, ServiceError>) -> Void)) {
         authenticateUserCalled = true
         
         guard let result = authenticateUserResult else {
@@ -140,7 +140,7 @@ private class LoginPresenterMock: LoginPresenter {
         hideLoadingCalled = true
     }
     
-    func showAlert(forError error: Error) {
+    func showAlert(forError error: ServiceError) {
         showAlertCalled = true
     }
     

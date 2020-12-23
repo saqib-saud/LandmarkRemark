@@ -15,7 +15,6 @@
 		C1B5889D2589CC7A007AB53C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B5889B2589CC7A007AB53C /* Main.storyboard */; };
 		C1B5889F2589CC7A007AB53C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1B5889E2589CC7A007AB53C /* Assets.xcassets */; };
 		C1B588A22589CC7A007AB53C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B588A02589CC7A007AB53C /* LaunchScreen.storyboard */; };
-		C1B588B82589CC7B007AB53C /* Landmark_RemarkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588B72589CC7B007AB53C /* Landmark_RemarkUITests.swift */; };
 		C1B588C92589CCA3007AB53C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1B588C82589CCA3007AB53C /* GoogleService-Info.plist */; };
 		C1B588EE258A11BB007AB53C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588ED258A11BB007AB53C /* LoginViewController.swift */; };
 		C1B588F8258A11FA007AB53C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588F7258A11FA007AB53C /* AuthenticationService.swift */; };
@@ -52,13 +51,6 @@
 			remoteGlobalIDString = C1B588912589CC7A007AB53C;
 			remoteInfo = "Landmark Remark";
 		};
-		C1B588B42589CC7B007AB53C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1B5888A2589CC7A007AB53C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C1B588912589CC7A007AB53C;
-			remoteInfo = "Landmark Remark";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +72,6 @@
 		C1B588A32589CC7A007AB53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1B588A82589CC7A007AB53C /* Landmark RemarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Landmark RemarkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B588AE2589CC7B007AB53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1B588B32589CC7B007AB53C /* Landmark RemarkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Landmark RemarkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B588B72589CC7B007AB53C /* Landmark_RemarkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark_RemarkUITests.swift; sourceTree = "<group>"; };
 		C1B588B92589CC7B007AB53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1B588C82589CCA3007AB53C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -129,13 +120,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1B588B02589CC7B007AB53C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -179,7 +163,6 @@
 			children = (
 				C1B588922589CC7A007AB53C /* Landmark Remark.app */,
 				C1B588A82589CC7A007AB53C /* Landmark RemarkTests.xctest */,
-				C1B588B32589CC7B007AB53C /* Landmark RemarkUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,24 +411,6 @@
 			productReference = C1B588A82589CC7A007AB53C /* Landmark RemarkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C1B588B22589CC7B007AB53C /* Landmark RemarkUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C1B588C22589CC7B007AB53C /* Build configuration list for PBXNativeTarget "Landmark RemarkUITests" */;
-			buildPhases = (
-				C1B588AF2589CC7B007AB53C /* Sources */,
-				C1B588B02589CC7B007AB53C /* Frameworks */,
-				C1B588B12589CC7B007AB53C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C1B588B52589CC7B007AB53C /* PBXTargetDependency */,
-			);
-			name = "Landmark RemarkUITests";
-			productName = "Landmark RemarkUITests";
-			productReference = C1B588B32589CC7B007AB53C /* Landmark RemarkUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -459,10 +424,6 @@
 						CreatedOnToolsVersion = 12.3;
 					};
 					C1B588A72589CC7A007AB53C = {
-						CreatedOnToolsVersion = 12.3;
-						TestTargetID = C1B588912589CC7A007AB53C;
-					};
-					C1B588B22589CC7B007AB53C = {
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = C1B588912589CC7A007AB53C;
 					};
@@ -483,7 +444,6 @@
 			targets = (
 				C1B588912589CC7A007AB53C /* Landmark Remark */,
 				C1B588A72589CC7A007AB53C /* Landmark RemarkTests */,
-				C1B588B22589CC7B007AB53C /* Landmark RemarkUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -501,13 +461,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C1B588A62589CC7A007AB53C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1B588B12589CC7B007AB53C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -657,14 +610,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1B588AF2589CC7B007AB53C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1B588B82589CC7B007AB53C /* Landmark_RemarkUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -672,11 +617,6 @@
 			isa = PBXTargetDependency;
 			target = C1B588912589CC7A007AB53C /* Landmark Remark */;
 			targetProxy = C1B588A92589CC7A007AB53C /* PBXContainerItemProxy */;
-		};
-		C1B588B52589CC7B007AB53C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C1B588912589CC7A007AB53C /* Landmark Remark */;
-			targetProxy = C1B588B42589CC7B007AB53C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -863,8 +803,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J4976VY2YM;
 				INFOPLIST_FILE = "Landmark RemarkTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -885,8 +826,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J4976VY2YM;
 				INFOPLIST_FILE = "Landmark RemarkTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -897,44 +839,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Landmark Remark.app/Landmark Remark";
-			};
-			name = Release;
-		};
-		C1B588C32589CC7B007AB53C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Landmark RemarkUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Saqib.Landmark-RemarkUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Landmark Remark";
-			};
-			name = Debug;
-		};
-		C1B588C42589CC7B007AB53C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Landmark RemarkUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Saqib.Landmark-RemarkUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Landmark Remark";
 			};
 			name = Release;
 		};
@@ -1027,8 +931,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J4976VY2YM;
 				INFOPLIST_FILE = "Landmark RemarkTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1039,25 +944,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Landmark Remark.app/Landmark Remark";
-			};
-			name = Xctest;
-		};
-		C1EF1A74258F863000149E4F /* Xctest */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Landmark RemarkUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Saqib.Landmark-RemarkUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Landmark Remark";
 			};
 			name = Xctest;
 		};
@@ -1090,16 +976,6 @@
 				C1B588C02589CC7B007AB53C /* Debug */,
 				C1EF1A73258F863000149E4F /* Xctest */,
 				C1B588C12589CC7B007AB53C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C1B588C22589CC7B007AB53C /* Build configuration list for PBXNativeTarget "Landmark RemarkUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C1B588C32589CC7B007AB53C /* Debug */,
-				C1EF1A74258F863000149E4F /* Xctest */,
-				C1B588C42589CC7B007AB53C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
