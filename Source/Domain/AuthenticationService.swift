@@ -5,13 +5,7 @@ import Foundation
 protocol AuthenticationUseCase {
     func authenticateUser(userName: String,
                           password: String,
-                          completion: @escaping ((Result<Void, AuthenticationError>) -> Void))
-}
-
-enum AuthenticationError: Error {
-    case invalidCredentials
-    case noInternet
-    case somethingElseWentWrong(message: String?)
+                          completion: @escaping ((Result<Void, ServiceError>) -> Void))
 }
 
 class AuthenticationService: AuthenticationUseCase {
@@ -25,7 +19,7 @@ class AuthenticationService: AuthenticationUseCase {
 
     func authenticateUser(userName: String,
                           password: String,
-                          completion: @escaping ((Result<Void, AuthenticationError>) -> Void)) {
+                          completion: @escaping ((Result<Void, ServiceError>) -> Void)) {
         firebaseClient.authenticate(withUserName: userName, password: password) { result in
             switch result {
             case .success:

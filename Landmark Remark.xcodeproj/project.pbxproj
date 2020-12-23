@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		916F5F077B31F12140A22EBC /* Pods_Landmark_RemarkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2187C88867532D7C7A5A89DF /* Pods_Landmark_RemarkTests.framework */; };
 		C1441BC425934EFD005557A3 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1441BC325934EFD005557A3 /* UIStoryboard+Extensions.swift */; };
+		C1441BDE25935408005557A3 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1441BDD25935408005557A3 /* ServiceError.swift */; };
 		C1B588962589CC7A007AB53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588952589CC7A007AB53C /* AppDelegate.swift */; };
 		C1B588982589CC7A007AB53C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588972589CC7A007AB53C /* SceneDelegate.swift */; };
 		C1B5889D2589CC7A007AB53C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B5889B2589CC7A007AB53C /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		83029FE409979682D468FAB6 /* Pods-Landmark Remark.xctest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark.xctest.xcconfig"; path = "Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark.xctest.xcconfig"; sourceTree = "<group>"; };
 		A52ADD7165F411CFAF2CE495 /* Pods-Landmark RemarkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark RemarkTests.release.xcconfig"; path = "Target Support Files/Pods-Landmark RemarkTests/Pods-Landmark RemarkTests.release.xcconfig"; sourceTree = "<group>"; };
 		C1441BC325934EFD005557A3 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
+		C1441BDD25935408005557A3 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		C1B588922589CC7A007AB53C /* Landmark Remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark Remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B588952589CC7A007AB53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B588972589CC7A007AB53C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				C1EF19FA258F71C100149E4F /* RemarkPO.swift */,
+				C1441BDD25935408005557A3 /* ServiceError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1441BDE25935408005557A3 /* ServiceError.swift in Sources */,
 				C1B588EE258A11BB007AB53C /* LoginViewController.swift in Sources */,
 				C1EF19C8258E08C700149E4F /* UIViewController+AlertDisplayable.swift in Sources */,
 				C1B588962589CC7A007AB53C /* AppDelegate.swift in Sources */,
