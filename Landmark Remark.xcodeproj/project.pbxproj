@@ -10,6 +10,8 @@
 		916F5F077B31F12140A22EBC /* Pods_Landmark_RemarkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2187C88867532D7C7A5A89DF /* Pods_Landmark_RemarkTests.framework */; };
 		C1441BC425934EFD005557A3 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1441BC325934EFD005557A3 /* UIStoryboard+Extensions.swift */; };
 		C1441BDE25935408005557A3 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1441BDD25935408005557A3 /* ServiceError.swift */; };
+		C18938C028B1E5EF00D9294C /* FireStoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18938BE28B1E5EF00D9294C /* FireStoreClient.swift */; };
+		C18938C128B1E5EF00D9294C /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18938BF28B1E5EF00D9294C /* FirebaseClient.swift */; };
 		C1B588962589CC7A007AB53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588952589CC7A007AB53C /* AppDelegate.swift */; };
 		C1B588982589CC7A007AB53C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588972589CC7A007AB53C /* SceneDelegate.swift */; };
 		C1B5889D2589CC7A007AB53C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B5889B2589CC7A007AB53C /* Main.storyboard */; };
@@ -19,12 +21,10 @@
 		C1B588EE258A11BB007AB53C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588ED258A11BB007AB53C /* LoginViewController.swift */; };
 		C1B588F8258A11FA007AB53C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B588F7258A11FA007AB53C /* AuthenticationService.swift */; };
 		C1EF191B258A145000149E4F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF191A258A145000149E4F /* LoginViewModel.swift */; };
-		C1EF1920258A1E0100149E4F /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF191F258A1E0100149E4F /* FirebaseClient.swift */; };
 		C1EF192C258A288A00149E4F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF192B258A288A00149E4F /* HomeViewController.swift */; };
 		C1EF1934258A289400149E4F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1933258A289400149E4F /* HomeViewModel.swift */; };
 		C1EF1939258A2ACC00149E4F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1938258A2ACC00149E4F /* AppCoordinator.swift */; };
 		C1EF1950258ADBB200149E4F /* RemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF194F258ADBB200149E4F /* RemarkView.swift */; };
-		C1EF1955258B1F2E00149E4F /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF1954258B1F2E00149E4F /* FirestoreClient.swift */; };
 		C1EF19A0258B341600149E4F /* DataStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF199F258B341600149E4F /* DataStoreService.swift */; };
 		C1EF19A9258C8AE000149E4F /* AddRemarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19A8258C8AE000149E4F /* AddRemarkViewController.swift */; };
 		C1EF19B1258C8AED00149E4F /* AddRemarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF19B0258C8AED00149E4F /* AddRemarkViewModel.swift */; };
@@ -63,6 +63,8 @@
 		A52ADD7165F411CFAF2CE495 /* Pods-Landmark RemarkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark RemarkTests.release.xcconfig"; path = "Target Support Files/Pods-Landmark RemarkTests/Pods-Landmark RemarkTests.release.xcconfig"; sourceTree = "<group>"; };
 		C1441BC325934EFD005557A3 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		C1441BDD25935408005557A3 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		C18938BE28B1E5EF00D9294C /* FireStoreClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireStoreClient.swift; sourceTree = "<group>"; };
+		C18938BF28B1E5EF00D9294C /* FirebaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		C1B588922589CC7A007AB53C /* Landmark Remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark Remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B588952589CC7A007AB53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B588972589CC7A007AB53C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,19 +74,15 @@
 		C1B588A32589CC7A007AB53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1B588A82589CC7A007AB53C /* Landmark RemarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Landmark RemarkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B588AE2589CC7B007AB53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1B588B72589CC7B007AB53C /* Landmark_RemarkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark_RemarkUITests.swift; sourceTree = "<group>"; };
-		C1B588B92589CC7B007AB53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1B588C82589CCA3007AB53C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C1B588E5258A0220007AB53C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C1B588ED258A11BB007AB53C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1B588F7258A11FA007AB53C /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		C1EF191A258A145000149E4F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		C1EF191F258A1E0100149E4F /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseClient.swift; path = Source/Data/FirebaseClient.swift; sourceTree = SOURCE_ROOT; };
 		C1EF192B258A288A00149E4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C1EF1933258A289400149E4F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C1EF1938258A2ACC00149E4F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C1EF194F258ADBB200149E4F /* RemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkView.swift; sourceTree = "<group>"; };
-		C1EF1954258B1F2E00149E4F /* FirestoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
 		C1EF199F258B341600149E4F /* DataStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreService.swift; sourceTree = "<group>"; };
 		C1EF19A8258C8AE000149E4F /* AddRemarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemarkViewController.swift; sourceTree = "<group>"; };
 		C1EF19B0258C8AED00149E4F /* AddRemarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemarkViewModel.swift; sourceTree = "<group>"; };
@@ -145,13 +143,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C18938BD28B1E5EF00D9294C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C18938BE28B1E5EF00D9294C /* FireStoreClient.swift */,
+				C18938BF28B1E5EF00D9294C /* FirebaseClient.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C1B588892589CC7A007AB53C = {
 			isa = PBXGroup;
 			children = (
 				C1B588E5258A0220007AB53C /* README.md */,
 				C1B588942589CC7A007AB53C /* Source */,
 				C1B588AB2589CC7B007AB53C /* Landmark RemarkTests */,
-				C1B588B62589CC7B007AB53C /* Landmark RemarkUITests */,
 				C1B588932589CC7A007AB53C /* Products */,
 				32E03CEC160CC67698297459 /* Pods */,
 				4EB150C835C2EAA1EE3E49CF /* Frameworks */,
@@ -195,15 +201,6 @@
 			path = "Landmark RemarkTests";
 			sourceTree = "<group>";
 		};
-		C1B588B62589CC7B007AB53C /* Landmark RemarkUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C1B588B72589CC7B007AB53C /* Landmark_RemarkUITests.swift */,
-				C1B588B92589CC7B007AB53C /* Info.plist */,
-			);
-			path = "Landmark RemarkUITests";
-			sourceTree = "<group>";
-		};
 		C1B588E9258A1119007AB53C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,9 +214,7 @@
 		C1B588EA258A1127007AB53C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C1EF1A02258F730400149E4F /* Models */,
-				C1EF191F258A1E0100149E4F /* FirebaseClient.swift */,
-				C1EF1954258B1F2E00149E4F /* FirestoreClient.swift */,
+				C18938BD28B1E5EF00D9294C /* Model */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -297,13 +292,6 @@
 			children = (
 				C1EF19FA258F71C100149E4F /* RemarkPO.swift */,
 				C1441BDD25935408005557A3 /* ServiceError.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		C1EF1A02258F730400149E4F /* Models */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -579,19 +567,19 @@
 				C1EF1950258ADBB200149E4F /* RemarkView.swift in Sources */,
 				C1B588982589CC7A007AB53C /* SceneDelegate.swift in Sources */,
 				C1EF19B1258C8AED00149E4F /* AddRemarkViewModel.swift in Sources */,
+				C18938C128B1E5EF00D9294C /* FirebaseClient.swift in Sources */,
 				C1EF19C0258DF75500149E4F /* LoadingView.swift in Sources */,
 				C1EF1934258A289400149E4F /* HomeViewModel.swift in Sources */,
 				C1EF19FB258F71C100149E4F /* RemarkPO.swift in Sources */,
 				C1EF191B258A145000149E4F /* LoginViewModel.swift in Sources */,
 				C1EF19B7258D81F900149E4F /* UIViewController+LoadingView.swift in Sources */,
 				C1B588F8258A11FA007AB53C /* AuthenticationService.swift in Sources */,
-				C1EF1955258B1F2E00149E4F /* FirestoreClient.swift in Sources */,
+				C18938C028B1E5EF00D9294C /* FireStoreClient.swift in Sources */,
 				C1EF192C258A288A00149E4F /* HomeViewController.swift in Sources */,
 				C1EF19A0258B341600149E4F /* DataStoreService.swift in Sources */,
 				C1EF19A9258C8AE000149E4F /* AddRemarkViewController.swift in Sources */,
 				C1EF1939258A2ACC00149E4F /* AppCoordinator.swift in Sources */,
 				C1441BC425934EFD005557A3 /* UIStoryboard+Extensions.swift in Sources */,
-				C1EF1920258A1E0100149E4F /* FirebaseClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
