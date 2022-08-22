@@ -1,4 +1,6 @@
 # Requirements
+<img width="600" alt="Untitled-3" src="https://user-images.githubusercontent.com/400207/185867030-f9543db7-36db-4242-a7e8-74173136f65f.png">
+Create an app that lets you add notes on landmarks.
 
 ## Explicit Requirements
 - [x] As a user (of the application) I can see my current location on a map
@@ -24,6 +26,7 @@ Based on requirements listed above following requirements were deduced.
 - [ ] When there are many remarks on the same point, the app should create a cluster and show them appropriately. 
 - [x] When Location sharing is disabled show appropriate prompt to user. 
 - [x] Linting and Swift Formatting 
+- [ ] Write a wrapper around location manager so that it could be mocked in tests. 
     
 # Which Architecture?
 
@@ -103,9 +106,12 @@ func instantiateViewController<T: UIViewController>() -> T
 Created UI using Interface Builder and programmatically (e.g. `LoadingView`). `LoadingView` Can be further improved using IBDesignable to customise in Interface Builder.
 
 ### Error handling
+<img width="800" alt="Untitled-4" src="https://user-images.githubusercontent.com/400207/185872823-7cb6a34c-7d57-4004-9028-d03f7a71cdfe.png">
+
 Each layer encapsulates its errors and only exposes subset of errors to consumer layer. For the end user there are only 2 types of errors:
 - Failed Errors (i.e. No internet error)
 - Retry-able Errors (i.e. Bad internet connection) 
+
 
 ### Behaviour Driven Unit Testing 
 BDD techniques are used for unit testing. Had limited success covering 3rd party libraries such and Firebase and FireStore. Some Firebase classes have private constructors, which becomes problematic while mocking it.
@@ -124,6 +130,9 @@ protocol FIRAuthProvider {
 
 extension Auth: FIRAuthProvider {}
 ```
+## MVVM with Combine
+Clients present in Model layers can easily be updated to utilise [Combine `Future`](https://developer.apple.com/documentation/combine/future). 
+Then publishers can be setup in Model layers so that they can be observed by the presentation layer.
 
 ## Bonus
 - Using single line file header [further reading](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev91a7a31fc)
