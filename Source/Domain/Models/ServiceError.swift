@@ -7,12 +7,14 @@ enum ServiceError: Error {
     case noInternet
     case somethingElseWentWrong(message: String?)
 
-    init?(firebaseError: FirebaseError) {
+    init(firebaseError: FirebaseError) {
         switch firebaseError {
-        case let .somethingWentWrong(message: message):
-        self = .somethingElseWentWrong(message: message)
-        default:
+        case .userNotFound, .invalidEmail, .wrongPassword:
             self = .invalidCredentials
+        case .noInternet:
+            self = .noInternet
+        case .somethingWentWrong(message: let message):
+            self = .somethingElseWentWrong(message: message)
         }
     }
 }

@@ -17,16 +17,22 @@ protocol FIRAuthProvider {
 extension Auth: FIRAuthProvider {}
 
 enum FirebaseError: Error {
-    init?(authError: AuthErrors) {
-        switch authError {
-
+    init(code: Int) {
+        switch code {
+        case 17008, 17011:
+            self = .userNotFound
+        case 17009:
+            self = .wrongPassword
+        case 17020:
+            self = .noInternet
         default:
             self = .somethingWentWrong(message: nil)
         }
     }
 
-    case userDisabled
+    case userNotFound
     case invalidEmail
+    case noInternet
     case wrongPassword
     case somethingWentWrong(message: String?)
 }
@@ -50,13 +56,17 @@ class FirebaseClient: FirebaseProvider {
                       password: String,
                       completion: @escaping ((Result<Void, FirebaseError>) -> Void)) {
         authClient.signIn(withEmail: userName, password: password) { _, error in
-          guard error == nil else {
-            completion(.failure(.somethingWentWrong(message: error?.localizedDescription)))
+            guard let error = error as? NSError else {
+                completion(.success(Void()))
+                return
+            }
 
-            return
-          }
-
-            completion(.success(Void()))
+            // Handle different Firebase errors, for now only handling login errors.
+            if error.domain == AuthErrorDomain {
+                completion(.failure(FirebaseError(code: error.code)))
+            } else {
+                completion(.failure(.somethingWentWrong(message: error.localizedDescription)))
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ class AuthenticationService: AuthenticationUseCase {
             case .success:
                 completion(.success(Void()))
             case let .failure(error):
-                completion(.failure(.somethingElseWentWrong(message: error.localizedDescription)))
+                completion(.failure(ServiceError(firebaseError: error)))
             }
         }
     }
