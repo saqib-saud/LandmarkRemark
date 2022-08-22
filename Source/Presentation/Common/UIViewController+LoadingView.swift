@@ -2,7 +2,7 @@
 
 import UIKit
 
-protocol LoadingDisplayable: class {
+protocol LoadingDisplayable: AnyObject {
     var loadingView: LoadingView? { get set }
     func showLoading()
     func hideLoading()

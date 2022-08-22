@@ -2,7 +2,7 @@
 
 import UIKit
 
-protocol AlertDisplayable: class {
+protocol AlertDisplayable: AnyObject {
     func showAlert(forError error: ServiceError)
 }
 

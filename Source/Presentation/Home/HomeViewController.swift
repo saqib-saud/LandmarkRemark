@@ -69,7 +69,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MKMapViewDelega
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        let message = "Please enable location sharing in Settings to continue using app."
+        let message = "Please enable location sharing in Settings to add any new annotations."
         let alertController = UIAlertController(title: "Location sharing disabled",
                                                 message: message,
                                                 preferredStyle: .alert)
